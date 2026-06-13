@@ -1,3 +1,15 @@
+Presque. Pour le baromètre fixe, nous avons bien 4 questions :
+
+Une question de raisonnement simple
+Batte et balle.
+Une question factuelle
+Les saisons sur Terre.
+Une question ouverte stable
+Stabilité ≠ vérité.
+Une question ouverte sensible
+Croyance largement admise mais probablement fausse.
+
+
 # NeoMundi Weekly Barometer
 
 ## Observer les changements silencieux des IA génératives, semaine après semaine
