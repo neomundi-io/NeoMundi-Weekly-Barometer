@@ -1,12 +1,19 @@
 Presque. Pour le baromètre fixe, nous avons bien 4 questions :
 
-Une question de raisonnement simple
+1 Une question de raisonnement simple
+
 Batte et balle.
-Une question factuelle
+
+2 Une question factuelle
+
 Les saisons sur Terre.
-Une question ouverte stable
+
+3 Une question ouverte stable
+
 Stabilité ≠ vérité.
-Une question ouverte sensible
+
+4 Une question ouverte sensible
+
 Croyance largement admise mais probablement fausse.
 
 
