@@ -1,3 +1,19 @@
+## Politique de dé-identification et risque résiduel de réidentification
+
+Cette release publique utilise des profils pseudonymisés afin de ne pas publier directement les noms des fournisseurs, modèles, versions, endpoints ou configurations techniques observés.
+
+Cette approche constitue une **dé-identification**, et non une anonymisation irréversible.
+
+Les mesures chiffrées sont conservées sous une forme arrondie et interprétable afin de préserver la valeur scientifique de la publication : amplitude des écarts, dispersion, variabilité, couverture et évolution dans le temps.
+
+Un risque résiduel de réidentification peut subsister, notamment par reproduction expérimentale du protocole, comparaison de signatures comportementales ou recoupement avec des informations externes.
+
+Ce risque est assumé et documenté. Il ne justifie pas la suppression des mesures nécessaires à l’interprétation scientifique des résultats.
+
+Les réponses brutes, identifiants de fournisseurs et de modèles, endpoints, paramètres sensibles, horodatages précis et tables de correspondance privées ne sont pas publiés.
+
+
+
 # NeoMundi Weekly Barometer
 
 ## Observer les changements silencieux des IA génératives, semaine après semaine
