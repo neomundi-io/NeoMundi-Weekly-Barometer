@@ -1,3 +1,7 @@
+## 🌐 Choisissez votre langue
+
+**[🇫🇷 Français](README.fr.md)** · **[🇬🇧 Read the English version](README.md)**
+
 # NeoMundi Weekly Barometer — Baseline V1
 
 Ce dossier contient la release publique quantitative de référence du NeoMundi Weekly Barometer.
