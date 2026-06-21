@@ -64,8 +64,15 @@ A score of `0.0` is a measured zero when its metric-level `n` is positive. `not_
 
 `delta_g` is an observable derived runtime signal. Its publication does not disclose the internal composition, thresholds, weighting logic, or proprietary calculation rules of the NeoMundi measurement framework.
 
-## Anonymization and residual re-identification risk
+## De-identification and residual re-identification risk
 
-Provider names, model names, endpoints, prompts, raw responses, detailed traces, precise timestamps and the private mapping are not published.
+This release is de-identified, not presented as irreversibly anonymous.
 
-The protocol and prompt families are reproducible in principle. A third party with comparable API access and experimental conditions may attempt to infer identities. NeoMundi does not publish the mapping and documents this as a residual risk rather than claiming irreversible anonymity.
+Provider names, model names, endpoints, prompts, raw responses, detailed traces, precise execution timestamps, and the private profile mapping are not published.
+
+Public profiles use stable opaque identifiers (`PROFILE-XXXXXX`) that are not derived from ranking, performance, provider names, or model names. The private mapping is retained separately and is not included in this repository or in any public release.
+
+Because the experimental protocol and prompt families are reproducible in principle, a third party with comparable API access, model availability, and execution conditions may attempt to infer the identity of one or more profiles.
+
+NeoMundi therefore documents re-identification as a residual and accepted risk of publication. The objective is not to claim impossible anonymity, but to prevent direct attribution while preserving enough methodological transparency for independent scrutiny.
+
