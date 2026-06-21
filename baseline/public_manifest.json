@@ -1,0 +1,46 @@
+{
+  "release_name": "NeoMundi Weekly Barometer — Baseline V1",
+  "release_type": "public_quantitative_deidentified_reference",
+  "panel_size": 12,
+  "question_count": 4,
+  "planned_repetitions_per_question_run": 100,
+  "planned_runs_per_question": 3,
+  "planned_observations_per_profile": 1200,
+  "planned_observations_total": 14400,
+  "actual_observations_total": 14400,
+  "anonymization": {
+    "profile_ids": "Existing private mapping only; no new pseudonyms created.",
+    "excluded_direct_identifiers": [
+      "provider",
+      "model",
+      "endpoint",
+      "raw responses",
+      "raw prompts",
+      "timestamps",
+      "request ids",
+      "trace ids",
+      "private mapping"
+    ],
+    "residual_reidentification_risk": "Documented; protocol-level reproduction may enable attempted inference under comparable access and conditions."
+  },
+  "public_indicator_families": [
+    "stability",
+    "factual hallucination signal",
+    "coherence",
+    "semantic instability",
+    "decision behaviour",
+    "inter-run variability",
+    "latency band"
+  ],
+  "advanced_public_indicator": {
+    "name": "delta_g",
+    "description": "Derived observable runtime-variation signal; internal composition is not disclosed."
+  },
+  "coverage_policy": {
+    "complete": "Planned execution count reached.",
+    "remediated_complete": "Planned execution count reached following documented remediation.",
+    "partial": "Fewer observations than planned.",
+    "not_scored": "No valid metric score available."
+  },
+  "no_ranking_policy": "No provider/model leaderboard, certification or global performance ranking is published."
+}

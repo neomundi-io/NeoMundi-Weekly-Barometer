@@ -1,0 +1,4 @@
+observed_decision,observation_count,observation_share,interpretation
+ALLOW,13906,0.9657,Observed decision outcome: ALLOW.
+ERROR,9,0.0006,Observed decision outcome: ERROR.
+FLAG,485,0.0337,Observed decision outcome: FLAG.

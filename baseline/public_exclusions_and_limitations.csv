@@ -1,0 +1,11 @@
+excluded_field_family,reason
+provider,Direct system identity is not public.
+model / requested_model / observed_model,Direct system identity is not public.
+endpoint / routing details,Potential direct or indirect infrastructure identification.
+raw prompts and prompt text,Not required for public aggregate interpretation.
+raw responses,"Privacy, content and reconstruction boundary."
+timestamps / request ids / trace ids,Execution fingerprint and traceability artefacts.
+private profile mapping,Kept confidential; never copied to release output.
+exact latency statistics,Coarse latency band is published instead.
+Law E internal decomposition fields,"Internal components, thresholds and aggregation logic are not published."
+question × run public table,Run-level table remains outside this public baseline release; variability is derived and published.
