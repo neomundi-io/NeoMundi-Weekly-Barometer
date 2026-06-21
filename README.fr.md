@@ -64,8 +64,14 @@ Un score `0.0` est un vrai zéro mesuré lorsque le `n` de cette métrique est p
 
 `delta_g` est un signal runtime dérivé et observable. Sa publication ne divulgue ni la composition interne, ni les seuils, ni les pondérations, ni les règles de calcul propriétaires du cadre de mesure NeoMundi.
 
-## Anonymisation et risque résiduel de réidentification
+## Désidentification et risque résiduel de réidentification
 
-Les fournisseurs, modèles, endpoints, prompts, réponses brutes, traces détaillées, timestamps précis et mapping privé ne sont pas publiés.
+Cette publication est désidentifiée ; elle ne prétend pas garantir un anonymat irréversible.
 
-Le protocole et les familles de prompts restent reproductibles en principe. Un tiers disposant d’un accès API comparable et de conditions expérimentales proches peut tenter d’inférer certaines identités. NeoMundi ne publie pas le mapping et documente ce risque comme résiduel plutôt que de prétendre à une anonymisation irréversible.
+Les noms des fournisseurs, les noms des modèles, les endpoints, les prompts, les réponses brutes, les traces détaillées, les horodatages précis d’exécution ainsi que le mapping privé des profils ne sont pas publiés.
+
+Les profils publics utilisent des identifiants opaques et stables (`PROFILE-XXXXXX`). Ils ne sont dérivés ni d’un classement, ni d’une performance, ni du nom d’un fournisseur ou d’un modèle. Le mapping privé est conservé séparément et n’est inclus ni dans ce dépôt ni dans les releases publiques.
+
+Le protocole expérimental et les familles de prompts restant, en principe, reproductibles, un tiers disposant d’un accès API comparable, de modèles disponibles et de conditions d’exécution proches pourrait tenter d’inférer l’identité d’un ou plusieurs profils.
+
+NeoMundi documente donc la réidentification comme un risque résiduel et assumé de publication. L’objectif n’est pas de prétendre à un anonymat impossible, mais d’empêcher l’attribution directe tout en préservant un niveau de transparence méthodologique suffisant pour permettre un examen indépendant.
