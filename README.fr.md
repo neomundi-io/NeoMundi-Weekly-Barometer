@@ -8,6 +8,32 @@ Ce dossier contient la release publique quantitative de référence du NeoMundi 
 
 Il s’agit d’une baseline anonymisée : une photographie initiale et fixe de comportements runtime observés sur un panel de 12 systèmes d’IA générative dans des conditions de mesure répétées. Ce document n’est ni un baromètre hebdomadaire éditorial, ni un classement, ni une certification.
 
+## La campagne de référence en bref
+
+**12 systèmes IA anonymisés · 4 questions fixes · 100 répétitions par question · 3 vagues d’exécution · 14 400 observations finalisées**
+
+Cette baseline constitue le point de référence initial du NeoMundi Weekly Barometer. Elle permet de mesurer, semaine après semaine, l’évolution éventuelle du comportement runtime des systèmes observés.
+
+### Les quatre questions fixes
+
+La campagne associe quatre conditions de réponse différentes :
+
+1. **Raisonnement — problème de la batte et de la balle**
+   Une batte et une balle coûtent 1,10 € au total. La batte coûte 1 € de plus que la balle. Combien coûte la balle ?
+
+2. **Explication scientifique — les saisons sur Terre**
+   Pourquoi les saisons existent-elles sur Terre ?
+
+3. **Question conceptuelle ouverte — stabilité et vérité**
+   Pourquoi une réponse IA stable n’est-elle pas nécessairement factuellement correcte ?
+
+4. **Question épistémique ouverte — croyances largement admises mais potentiellement fausses**
+   Donnez un exemple de croyance largement admise qui pourrait être fausse, puis expliquez comment elle pourrait être vérifiée.
+
+Ces questions ont été répétées dans les mêmes conditions de campagne afin d’observer la stabilité des réponses, les signaux de validité factuelle, la cohérence, la variabilité sémantique, le comportement de décision et les variations runtime.
+
+Les questions sont publiques afin que chacun puisse comprendre la nature des tâches observées et reproduire des conditions d’interrogation comparables.
+
 ## Ce que permet cette baseline
 
 Elle fixe les indicateurs récurrents qui pourront être comparés dans les baromètres suivants :
