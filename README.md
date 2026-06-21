@@ -1,45 +1,45 @@
-## 🌐 Choisissez votre langue
+## 🌐 Choose your language
 
-**[🇫🇷 Français](README.fr.md)** · **[🇬🇧 Read the English version](README.md)**
+**[🇬🇧 English](README.md)** · **[🇫🇷 Lire la version française](README.fr.md)**
 
 # NeoMundi Weekly Barometer — Baseline V1
 
-Ce dossier contient la release publique quantitative de référence du NeoMundi Weekly Barometer.
+This directory contains the public quantitative reference release for the NeoMundi Weekly Barometer.
 
-Il s’agit d’une baseline anonymisée : une photographie initiale et fixe de comportements runtime observés sur un panel de 12 systèmes d’IA générative dans des conditions de mesure répétées. Ce document n’est ni un baromètre hebdomadaire éditorial, ni un classement, ni une certification.
+It is an anonymized baseline: a fixed starting photograph of observed runtime behaviour across a panel of 12 generative AI systems under repeated measurement conditions. It is **not** a weekly editorial report, a leaderboard, a certification, or a global ranking.
 
-## Ce que permet cette baseline
+## What this baseline enables
 
-Elle fixe les indicateurs récurrents qui pourront être comparés dans les baromètres suivants :
+The release fixes recurring indicators that can be compared in subsequent barometers:
 
-- stabilité ;
-- signal d’hallucination factuelle ;
-- cohérence ;
-- instabilité sémantique ;
-- comportement de décision (`ALLOW`, `FLAG`, `ERROR`) ;
-- variabilité inter-run ;
-- bande de latence ;
-- `delta_g`, signal avancé de variation runtime observée.
+- stability;
+- factual hallucination signal;
+- coherence;
+- semantic instability;
+- decision behaviour (`ALLOW`, `FLAG`, `ERROR`);
+- inter-run variability;
+- latency band;
+- `delta_g`, reported as an advanced observable runtime-variation signal.
 
-## Fichiers
+## Files
 
-- `public_profiles_summary.csv` — une ligne quantitative par profil pseudonymisé.
-- `public_question_profiles.csv` — résultats quantitatifs par profil et par question.
-- `public_regimes_totals.csv` — distribution directe des issues de décision ; aucun binning de rang artificiel.
-- `public_manifest.json` — métadonnées de release et politique de champs.
-- `public_exclusions_and_limitations.csv` — exclusions et limites d’interprétation.
-- `METHODOLOGY.md` — note méthodologique courte.
+- `public_profiles_summary.csv` — one quantitative record per pseudonymized profile.
+- `public_question_profiles.csv` — quantitative results by profile and question.
+- `public_regimes_totals.csv` — direct decision-outcome distribution only. It does not contain artificial rank bins.
+- `public_manifest.json` — release metadata and field policy.
+- `public_exclusions_and_limitations.csv` — excluded fields and limits of interpretation.
+- `METHODOLOGY.md` — concise methodological note.
 
-## Limite d’interprétation
+## Interpretation boundary
 
-Le statut `complete` signifie que le jeu d’exécutions prévu a été réalisé. La couverture de chaque métrique est publiée séparément et peut être inférieure à 100 % si une métrique individuelle n’a pas pu être calculée pour toutes les observations.
+A `complete` cell means the planned execution set was completed. Metric-level coverage is reported separately and can be below 100% where an individual metric could not be computed for every observation.
 
-Un score `0.0` est un vrai zéro mesuré lorsque le `n` de cette métrique est positif. `not_scored` signifie qu’aucun score valide n’était disponible.
+A score of `0.0` is a measured zero when its metric-level `n` is positive. `not_scored` means no valid score was available.
 
-`delta_g` est un signal runtime dérivé et observable. Sa publication ne divulgue ni la composition interne, ni les seuils, ni les pondérations, ni les règles de calcul propriétaires du cadre de mesure NeoMundi.
+`delta_g` is an observable derived runtime signal. Its publication does not disclose the internal composition, thresholds, weighting logic, or proprietary calculation rules of the NeoMundi measurement framework.
 
-## Anonymisation et risque résiduel de réidentification
+## Anonymization and residual re-identification risk
 
-Les fournisseurs, modèles, endpoints, prompts, réponses brutes, traces détaillées, timestamps précis et mapping privé ne sont pas publiés.
+Provider names, model names, endpoints, prompts, raw responses, detailed traces, precise timestamps and the private mapping are not published.
 
-Le protocole et les familles de prompts restent reproductibles en principe. Un tiers disposant d’un accès API comparable et de conditions expérimentales proches peut tenter d’inférer certaines identités. NeoMundi ne publie pas le mapping et documente ce risque comme résiduel plutôt que de prétendre à une anonymisation irréversible.
+The protocol and prompt families are reproducible in principle. A third party with comparable API access and experimental conditions may attempt to infer identities. NeoMundi does not publish the mapping and documents this as a residual risk rather than claiming irreversible anonymity.
