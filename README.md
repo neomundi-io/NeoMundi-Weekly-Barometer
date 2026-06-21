@@ -8,6 +8,32 @@ This directory contains the public quantitative reference release for the NeoMun
 
 It is an anonymized baseline: a fixed starting photograph of observed runtime behaviour across a panel of 12 generative AI systems under repeated measurement conditions. It is **not** a weekly editorial report, a leaderboard, a certification, or a global ranking.
 
+## Reference campaign at a glance
+
+**12 anonymized AI systems · 4 fixed questions · 100 repetitions per question · 3 execution waves · 14,400 finalized observations**
+
+This baseline is the initial reference point of the NeoMundi Weekly Barometer. It is designed to make future changes in AI runtime behaviour measurable over time.
+
+### The four fixed questions
+
+The campaign combines four different response conditions:
+
+1. **Reasoning — bat and ball problem**
+   A bat and a ball cost €1.10 in total. The bat costs €1 more than the ball. How much does the ball cost?
+
+2. **Scientific explanation — seasons on Earth**
+   Why do seasons occur on Earth?
+
+3. **Open conceptual question — stability and truth**
+   Why is a stable AI response not necessarily factually correct?
+
+4. **Open epistemic question — widely accepted but potentially false beliefs**
+   Give an example of a widely accepted belief that may be false, and explain how it could be checked.
+
+These questions were repeated under the same campaign conditions in order to observe response stability, factual validity signals, coherence, semantic variability, decision behaviour and runtime variation.
+
+The questions are public so that readers can understand the nature of the observed tasks and independently reproduce comparable inquiry conditions.
+
 ## What this baseline enables
 
 The release fixes recurring indicators that can be compared in subsequent barometers:
