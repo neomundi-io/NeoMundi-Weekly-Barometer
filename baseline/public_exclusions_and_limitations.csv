@@ -1,8 +1,0 @@
-﻿rule_id,scope,treatment,detail
-PUB-01,identity,pseudonymized,Provider and model identities are replaced by stable profile identifiers.
-PUB-02,numerical_values,banded,"Exact metric values, timestamps, source filenames and high-precision scores are not published."
-PUB-03,prompts,withheld,Prompt contents are not published. Only Q01 to Q04 identifiers are released.
-PUB-04,cost_energy,excluded,"Flat or non-discriminating fields, including cost_score, baseline_reference_energy and density_risk_coefficient, are excluded from this release."
-PUB-05,variability,qualified,Inter-wave variability is based on three repeated measurement waves. It is exploratory and is not a long-horizon stability estimate.
-PUB-06,remediation,documented_private,A limited non-semantic stream collection failure was remediated under the same measurement configuration before public aggregation. Original records remain preserved in the private audit corpus.
-PUB-07,interpretation,non_leaderboard,"This release documents anonymized runtime behavior profiles. It does not rank, certify or declare a universal best system."
