@@ -1,0 +1,36 @@
+{
+  "coverage_rate": 0.994375,
+  "duplicate_rows_detected": 0,
+  "executions_fully_scored": 4773,
+  "executions_launched": 4800,
+  "global_metrics": {
+    "coherence_mean": 1.0,
+    "factual_risk_mean": 0.013681,
+    "semantic_variation_rate": 0.020742,
+    "stability_mean": 0.918867,
+    "validity_signal_mean": 0.986319
+  },
+  "metric_unique_value_counts": {
+    "coherence_score": 1,
+    "factual_hallucination_score": 9,
+    "semantic_instability_score": 2,
+    "stability_score": 9,
+    "v_score": 9
+  },
+  "non_discriminating_metrics": [
+    "coherence_score"
+  ],
+  "questions_observed": 4,
+  "schema_version": "1.0.0",
+  "score_dependency": {
+    "assessable": true,
+    "publication_interpretation": "The three values must not be presented as independent confirmations in this campaign. The public release therefore documents their observed dependency explicitly.",
+    "stability_vs_validity_linear_fit": {
+      "intercept": 0.615384883,
+      "r_squared": 1.0,
+      "slope": 0.307692116
+    },
+    "validity_plus_factual_risk_max_abs_error": 0.0
+  },
+  "systems_observed": 12
+}
