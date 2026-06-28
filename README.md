@@ -1,3 +1,8 @@
+## 🌐 Choose your language
+
+**[🇬🇧 English](README.md)** · **[🇫🇷 Lire la version française](README.fr.md)**
+
+
 # NeoMundi Weekly Barometer — Public Baseline V1
 
 This directory contains the first public quantitative reference release for the NeoMundi Weekly Barometer.
