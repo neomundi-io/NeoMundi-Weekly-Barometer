@@ -1,0 +1,109 @@
+{
+  "spec_version": "1.1.0",
+  "created_by": "NeoMundi Recherche",
+  "description": "NeoMundi Barometer visual specification v1.1. Axis bounds and projection formulas remain frozen; public wording has been clarified.",
+  "canvas": {
+    "viewBox": "0 0 680 492",
+    "plot_x_min_px": 70,
+    "plot_x_max_px": 650,
+    "plot_y_min_px": 410,
+    "plot_y_max_px": 30
+  },
+  "axes": {
+    "x": {
+      "variable": "factual_risk_pct",
+      "label": "Responses needing more verification (%)",
+      "sublabel": "the higher this number, the more responses need to be checked",
+      "domain_min": 0.0,
+      "domain_max": 2.5,
+      "ticks": [
+        0,
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        2.5
+      ],
+      "px_per_unit": 232.0,
+      "formula": "cx = plot_x_min_px + (value * px_per_unit)"
+    },
+    "y": {
+      "variable": "semantic_variation_pct",
+      "label": "Change in response meaning (%)",
+      "sublabel": "the meaning of responses changes from one run to another",
+      "domain_min": 0.0,
+      "domain_max": 12.0,
+      "ticks": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12
+      ],
+      "px_per_unit": 31.6667,
+      "formula": "cy = plot_y_min_px - (value * px_per_unit)"
+    }
+  },
+  "outlier_rules": {
+    "x_outlier": {
+      "condition": "factual_risk_pct > axes.x.domain_max",
+      "treatment": "arrow_at_right_border",
+      "arrow_cx": 645,
+      "arrow_cy_formula": "cy = plot_y_min_px - (semantic_variation_pct * axes.y.px_per_unit)",
+      "badge_shows": "profile_id and actual factual_risk_pct value",
+      "badge_fill": "#FCEBEB",
+      "badge_text_color": "#791F1F",
+      "note": "The actual Y position is retained. The true off-scale value is displayed in the badge."
+    },
+    "y_outlier": {
+      "condition": "semantic_variation_pct > axes.y.domain_max",
+      "treatment": "clamp_to_top_border_with_label",
+      "note": "Not observed in current campaigns. Implement if needed."
+    }
+  },
+  "vocabulary": {
+    "factual_risk_tooltip_label": "Responses needing more verification",
+    "semantic_variation_tooltip_label": "Change in response meaning",
+    "zone_high_sem_low_fact": "Meaning often changes, few responses need verification",
+    "zone_low_sem_high_fact": "Meaning remains stable, more responses need verification",
+    "zone_empty_corner": "Empty corner : no profile combines major meaning changes and more verification needs",
+    "outlier_arrow_suffix": "→ off scale",
+    "note": "Values, bounds and formulas remain unchanged. Public wording has been simplified to explain what is observed.",
+    "outlier_badge_label": "Responses to check"
+  },
+  "colors": {
+    "point_fill": "#534AB7",
+    "point_hover_stroke": "#26215C",
+    "axis_stroke": "#888780",
+    "gridline_stroke": "#D3D1C7",
+    "zone_label_high_sem": "#0F6E56",
+    "zone_label_high_fact": "#854F0B",
+    "zone_label_empty": "#B4B2A9",
+    "annotation_text": "#5F5E5A",
+    "outlier_badge_fill": "#FCEBEB",
+    "outlier_badge_text": "#791F1F",
+    "outlier_arrow": "#A32D2D"
+  },
+  "typography": {
+    "axis_tick_font_size": 11,
+    "axis_label_font_size": 13,
+    "zone_label_font_size": 12,
+    "annotation_font_size": 11,
+    "tooltip_font_size": 12
+  },
+  "comparability_guarantee": {
+    "statement": "All weeks use exactly the same axis bounds, projection formulas, vocabulary structure and palette. Direct visual comparison between weeks is guaranteed without recalibration.",
+    "axis_change_policy": "Any change to domain_min, domain_max or px_per_unit increments spec_version and invalidates direct comparison with prior weeks."
+  },
+  "ui": {
+    "html_lang": "en",
+    "page_title": "NeoMundi Barometer #{week} — Mapping",
+    "meta_template": "NeoMundi Barometer · week {week} · {n_profiles} de-identified profiles · generated {generated}",
+    "screen_reader_template": "Mapping of {n_profiles} de-identified observed systems. Horizontal axis: responses needing more verification. Vertical axis: change in response meaning. Graphic specification comparable across all weeks.",
+    "aria_template": "Scatter plot of {n_profiles} observed systems — NeoMundi Barometer week {week}",
+    "outlier_console_label": "responses needing more verification",
+    "y_outlier_console_label": "change in response meaning"
+  }
+}
