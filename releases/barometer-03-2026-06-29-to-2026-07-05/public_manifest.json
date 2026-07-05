@@ -1,0 +1,63 @@
+{
+  "campaign_id": "barometer-03-2026-06-29-to-2026-07-05",
+  "campaign_validation": {
+    "coverage_rate": 0.999792,
+    "duplicate_rows": 0,
+    "fully_scorable_rows": 4799,
+    "incomplete_or_error_rows": 1,
+    "metric_complete_rows": 4799,
+    "non_error_rows": 4799,
+    "prompt_count": 4,
+    "row_count": 4800,
+    "system_count": 12
+  },
+  "de-identification": {
+    "mapping_published": false,
+    "method": "Owner-maintained private profile registry; opaque PROFILE-XXXXXX identifiers. Explicit model-family aliases resolve logical system identities.",
+    "private_mapping_location": "not published",
+    "ranking_used": false
+  },
+  "observation_period": {
+    "end": "2026-07-05",
+    "start": "2026-06-29"
+  },
+  "public_files": [
+    {
+      "bytes": 2095,
+      "name": "public_metric_contract.json",
+      "sha256": "a7443b755623d3e8cbe375006a9850382bba0804609f9a7e4813974a991aebbc"
+    },
+    {
+      "bytes": 1131,
+      "name": "public_overview.json",
+      "sha256": "d73c5ecd63352ea0f095dfbe5c442b0f4648e4bbc947f4e4a9eddbe0ebd325e4"
+    },
+    {
+      "bytes": 1165,
+      "name": "public_profiles_summary.csv",
+      "sha256": "9e1f75fac497126d69336282bb46160c35a0eaa7d18520022c9510f33d782824"
+    },
+    {
+      "bytes": 442,
+      "name": "public_questions_summary.csv",
+      "sha256": "bca665b5f584b90da025a56a0fe374399e581a61b9aa4f9b46b9928909ac8eb5"
+    },
+    {
+      "bytes": 658,
+      "name": "public_regime_distribution.csv",
+      "sha256": "b3130c8673308d83d350d681183975519192364a59f103bac4e4fbc9ba66e2aa"
+    },
+    {
+      "bytes": 1865,
+      "name": "README.md",
+      "sha256": "77687c242466c0165094511190ec2dd624df92b7bc476bd0e538475436e63159"
+    }
+  ],
+  "release_generated_at_utc": "2026-07-05T07:24:21+00:00",
+  "schema_version": "1.0.0",
+  "source_inventory_private": {
+    "file_count": 12,
+    "row_total": 4800,
+    "source_file_names_published": false
+  }
+}
