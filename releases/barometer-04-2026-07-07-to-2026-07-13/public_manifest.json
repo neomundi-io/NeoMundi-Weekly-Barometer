@@ -1,0 +1,63 @@
+{
+  "campaign_id": "neomundi_barometer_2026_04",
+  "campaign_validation": {
+    "coverage_rate": 0.99125,
+    "duplicate_rows": 0,
+    "fully_scorable_rows": 4758,
+    "incomplete_or_error_rows": 42,
+    "metric_complete_rows": 4758,
+    "non_error_rows": 4758,
+    "prompt_count": 4,
+    "row_count": 4800,
+    "system_count": 12
+  },
+  "de-identification": {
+    "mapping_published": false,
+    "method": "Owner-maintained private profile registry; opaque PROFILE-XXXXXX identifiers. Explicit model-family aliases resolve logical system identities.",
+    "private_mapping_location": "not published",
+    "ranking_used": false
+  },
+  "observation_period": {
+    "end": "2026-07-13",
+    "start": "2026-07-07"
+  },
+  "public_files": [
+    {
+      "bytes": 2095,
+      "name": "public_metric_contract.json",
+      "sha256": "a7443b755623d3e8cbe375006a9850382bba0804609f9a7e4813974a991aebbc"
+    },
+    {
+      "bytes": 1127,
+      "name": "public_overview.json",
+      "sha256": "690c350ad237e8e7d3d8860513ca64bf173a2574af38e6a6862e0e01432bf892"
+    },
+    {
+      "bytes": 1251,
+      "name": "public_profiles_summary.csv",
+      "sha256": "629ab595cc729827b0117684f418004d2a3f2fb685440f55f44e641c1f675a4e"
+    },
+    {
+      "bytes": 485,
+      "name": "public_questions_summary.csv",
+      "sha256": "d20ce893798450b3a6389145827fa535af4f0a631a1f5978cde979e4013b421d"
+    },
+    {
+      "bytes": 659,
+      "name": "public_regime_distribution.csv",
+      "sha256": "d9be5d85a9e22cd45c3cf87d7c275ef0a58ad8d66fda0a1caba23d60462aff55"
+    },
+    {
+      "bytes": 1854,
+      "name": "README.md",
+      "sha256": "7c661c3439c2db52b5a4f668c2aa024d9351de712786a017d788183bbc4b8733"
+    }
+  ],
+  "release_generated_at_utc": "2026-07-12T08:33:53+00:00",
+  "schema_version": "1.0.0",
+  "source_inventory_private": {
+    "file_count": 12,
+    "row_total": 4800,
+    "source_file_names_published": false
+  }
+}

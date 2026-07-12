@@ -1,0 +1,55 @@
+{
+  "excluded_private_fields": [
+    "provider",
+    "requested_model",
+    "observed_model",
+    "prompt_id",
+    "llm_response",
+    "llm_response_raw",
+    "request_id",
+    "trace_id",
+    "raw_stream_payload",
+    "raw_govern_payload",
+    "api_timestamp",
+    "governance_reasons"
+  ],
+  "metrics": [
+    {
+      "meaning": "Measurement output labelled stability in the source campaign.",
+      "public_name": "stability_mean",
+      "source_field": "stability_score",
+      "unit": "0 to 1",
+      "warning": "For this campaign, stability is empirically dependent on v_score. Do not treat both as independent evidence."
+    },
+    {
+      "meaning": "Measurement output labelled v_score in the source campaign.",
+      "public_name": "validity_signal_mean",
+      "source_field": "v_score",
+      "unit": "0 to 1",
+      "warning": "Published as a validity signal, not as an independent certified truth score."
+    },
+    {
+      "meaning": "Measurement output for factual-risk / hallucination signal.",
+      "public_name": "factual_risk_mean",
+      "source_field": "factual_hallucination_score",
+      "unit": "0 to 1",
+      "warning": "For this campaign, factual risk is the observed inverse of v_score."
+    },
+    {
+      "meaning": "Share of fully-scored observations with a non-zero semantic-instability signal.",
+      "public_name": "semantic_variation_rate",
+      "source_field": "semantic_instability_score",
+      "unit": "proportion",
+      "warning": "A semantic variation signal is not itself a factual-error finding."
+    },
+    {
+      "meaning": "Measurement output labelled internal coherence.",
+      "public_name": "coherence_mean",
+      "source_field": "coherence_score",
+      "unit": "0 to 1",
+      "warning": "If the field is flat for a campaign, it is disclosed as non-discriminating rather than interpreted."
+    }
+  ],
+  "schema_version": "1.0.0",
+  "scope": "Aggregated, de-identified weekly observations. No prompt text, response content, provider name, model name, or raw payload is published."
+}
