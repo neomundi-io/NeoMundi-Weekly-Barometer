@@ -1,231 +1,240 @@
-## 🌐 Choose your language
+# NeoMundi Weekly Barometer
 
-**[🇬🇧 English](README.md)** · **[🇫🇷 Lire la version française](README.fr.md)**
+🌐 **Language:** [English](./README.md) · [Français](./README.fr.md)
 
+🌍 **NeoMundi:** [English website](https://neomundi.org/en/home) · [Site français](https://neomundi.org/)
 
-# NeoMundi Weekly Barometer — Public Baseline V1
+The **NeoMundi Weekly Barometer** is a public longitudinal measurement programme designed to observe how generative AI systems behave over time under repeated and controlled conditions.
 
-This directory contains the first public quantitative reference release of the **NeoMundi Weekly Barometer**.
+It does not rank providers or models.
 
-Baseline V1 is a **de-identified reference campaign**: a fixed measurement snapshot of AI runtime behaviour observed across 12 generative AI profiles under repeated and controlled conditions.
+It produces de-identified, comparable and documented runtime measurements intended to make behavioural changes visible across successive campaigns.
 
-It is not a weekly editorial report, a leaderboard, a certification, a model ranking or a general assessment of AI quality.
-
-Its purpose is narrower and more durable: to establish a stable quantitative reference against which future changes in observed AI behaviour can be measured over time.
+> Benchmarks capture AI systems at a given moment.  
+> NeoMundi observes their trajectories.
 
 ---
 
-## Reference campaign at a glance
+## Programme structure
 
-- **12 de-identified AI profiles**
-- **4 fixed questions**
-- **100 repetitions per question**
-- **3 execution waves**
-- **14,400 finalised observations**
+The repository contains four main components:
 
-Baseline V1 establishes the initial reference frame for the NeoMundi Weekly Barometer.
+- **Public Baseline V1** — the initial quantitative reference campaign;
+- **Weekly releases** — recurring public measurement campaigns;
+- **Methodology** — the active protocol and interpretation framework;
+- **Calibration** — the technical validation procedure used before significant protocol or pipeline changes.
 
-Future weekly releases can be compared with this baseline to assess whether observed behavioural signals remain stable, vary progressively or indicate a possible change in behavioural regime.
+---
+
+## Active weekly protocol
+
+Each weekly campaign is based on:
+
+```text
+12 de-identified AI profiles
+× 4 fixed questions
+× 100 repetitions
+= 4,800 planned executions
+```
+
+The reference measurement window is:
+
+```text
+Monday 00:00 UTC
+to
+Sunday 23:59 UTC
+```
+
+The same four questions are repeated under comparable conditions to support longitudinal analysis.
 
 ---
 
 ## The four fixed questions
 
-The campaign combines four distinct response conditions.
-
-### Question 1 — Reasoning
-
-**Bat and ball problem**
+### `NM-WEEKLY-Q01` — Reasoning
 
 > A bat and a ball cost €1.10 in total.  
 > The bat costs €1 more than the ball.  
 > How much does the ball cost?
 
-### Question 2 — Scientific explanation
-
-**Seasons on Earth**
+### `NM-WEEKLY-Q02` — Scientific explanation
 
 > Why do seasons occur on Earth?
 
-### Question 3 — Open conceptual question
-
-**Stability and truth**
+### `NM-WEEKLY-Q03` — Open conceptual question
 
 > Why is a stable AI response not necessarily factually correct?
 
-### Question 4 — Open epistemic question
-
-**Widely accepted but potentially false beliefs**
+### `NM-WEEKLY-Q04` — Open epistemic question
 
 > Give an example of a widely accepted belief that may be false, and explain how it could be checked.
 
-The same questions were repeated under controlled campaign conditions to observe:
-
-- response stability;
-- semantic variation;
-- factual-risk signals;
-- coherence;
-- decision and regime behaviour;
-- runtime variation;
-- measurement completeness.
-
-The questions are public so that readers can understand the nature of the observed tasks and reproduce comparable inquiry conditions independently.
+These questions cover distinct response conditions and must not be reduced to a single universal score.
 
 ---
 
-## What this baseline enables
+## Public Baseline V1
 
-Baseline V1 establishes recurring indicators that can be compared across subsequent weekly releases.
+The **Public Baseline V1** establishes the initial quantitative reference frame of the NeoMundi Weekly Barometer.
 
-Published observations include:
+It includes:
+
+```text
+12 de-identified AI profiles
+× 4 fixed questions
+× 100 repetitions
+× 3 execution waves
+= 14,400 finalised observations
+```
+
+The baseline is not an ordinary weekly release.
+
+It is an extended reference campaign used to establish a fixed comparison point for future longitudinal observation.
+
+Access the baseline:
+
+- [Baseline V1 — English](./baseline/README.md)
+- [Baseline V1 — Français](./baseline/README.fr.md)
+
+---
+
+## Weekly releases
+
+Recurring Barometer publications are available in:
+
+- [Weekly releases](./releases/)
+
+Each release may include:
+
+- aggregated de-identified data;
+- indicators by profile and question;
+- coverage information;
+- regime or decision distributions;
+- visualisations;
+- methodological limitations;
+- public manifests and verification artefacts.
+
+---
+
+## Methodology
+
+The active protocol is documented in:
+
+- [Methodology — English](./methodology.md)
+- [Méthodologie — Français](./methodologie.md)
+
+These documents define:
+
+- the weekly measurement architecture;
+- the four fixed questions;
+- the main public signals;
+- the longitudinal comparison principles;
+- validation requirements;
+- interpretation limits;
+- de-identification and publication boundaries.
+
+---
+
+## Calibration
+
+The calibration protocol is documented in:
+
+- [Calibration protocol — English](./CALIBRATION.md)
+- [Protocole de calibration — Français](./CALIBRATION.fr.md)
+
+Calibration validates the measurement process before a public campaign or any significant modification to the protocol, scoring pipeline, aggregation logic or public export structure.
+
+> Calibration validates the measurement process. It does not validate the AI system itself.
+
+---
+
+## Observed signal families
+
+Depending on the campaign and available coverage, the Barometer may publish or document:
 
 - stability;
-- factual-risk signals;
-- coherence;
 - semantic variation;
-- decision behaviour, including `ALLOW`, `FLAG` and `ERROR`;
+- coherence;
+- factual-risk signals;
+- decision or regime behaviour;
 - inter-run variation;
 - coverage and completeness;
-- latency bands, where applicable;
-- `delta_g`, reported as an advanced observable signal of runtime variation.
+- latency bands;
+- cost and runtime-effort indicators where available;
+- `delta_g`, reported as an advanced observable runtime-variation signal.
 
-The purpose is not to determine which system is “best”.
-
-The purpose is to make behavioural movement measurable and visible across repeated observations.
-
-A system may remain highly stable while producing factual-risk signals.
-
-A system may vary semantically without being factually incorrect.
-
-Different signals may converge, diverge or remain inconclusive.
-
-**A signal is an observation requiring interpretation, not a verdict.**
+No individual indicator should be interpreted in isolation as a complete assessment of quality, truthfulness, safety or governability.
 
 ---
 
-## Public files
+## Interpretation doctrine
 
-### `public_profiles_summary.csv`
+The Barometer follows one fundamental rule:
 
-One aggregated quantitative record per de-identified profile.
+> A signal is an observation requiring interpretation, not a verdict.
 
-### `public_question_profiles.csv`
+An observed change does not, by itself, establish:
 
-Aggregated quantitative results by profile and question.
+- a model update;
+- a provider-side modification;
+- a degradation;
+- an improvement;
+- regulatory compliance;
+- deployment suitability;
+- the superiority of one system over another.
 
-### `public_regimes_totals.csv`
+The appropriate formulation is:
 
-Distribution of observed decision states and behavioural regimes. This file does not contain artificial ranking categories.
+> A behavioural change was observed under the conditions of the campaign.
 
-### `public_manifest.json`
-
-Release metadata, campaign provenance and public-file inventory.
-
-### `public_exclusions_and_limitations.csv`
-
-Excluded fields, publication boundaries and documented interpretation limits.
-
-### `METHODOLOGY.md`
-
-Concise methodological documentation for the Baseline V1 campaign.
-
----
-
-## Interpretation boundaries
-
-A complete experimental cell means that the planned set of executions was completed.
-
-Metric-level coverage is reported separately and may remain below 100% when a specific metric could not be computed for every observation.
-
-A value of `0.0` represents a measured zero when the metric-level sample size is greater than zero.
-
-`not_scored` means that no valid score was available for the relevant observation.
-
-`delta_g` is a derived observable runtime signal. Its publication does not disclose the internal composition, thresholds, weighting logic or proprietary calculation rules of the NeoMundi measurement framework.
-
-Published metrics must not be interpreted as independent confirmations when the release documentation identifies a dependency between them.
-
-No individual metric should be interpreted in isolation as a complete assessment of system quality, truthfulness, safety or governability.
+Causal attribution requires additional evidence.
 
 ---
 
 ## Public release boundary
 
-The NeoMundi Weekly Barometer publishes aggregated and de-identified results so that reported figures, coverage levels, regime distributions and visualisations can be publicly inspected.
+The NeoMundi Weekly Barometer publishes aggregated and de-identified results so that figures, coverage levels, distributions and visualisations can be publicly inspected.
 
-The release is deliberately bounded.
+Public releases do not represent the complete NeoMundi measurement record.
 
-It does not represent the complete NeoMundi measurement record.
+Depending on the campaign, the private measurement boundary may include:
 
----
+- execution-level observations;
+- raw responses;
+- detailed runtime traces;
+- provider and model identifiers;
+- precise timestamps;
+- token and cost data;
+- internal diagnostics;
+- review notes;
+- private profile mapping;
+- proprietary calculation logic.
 
-## What remains within the private measurement boundary
-
-Depending on the campaign and measurement scope, the private observation record may include:
-
-- execution-level measurement records rather than public aggregates;
-- repeated-run histories and longitudinal continuity observations;
-- execution-level stability, validity, factual-risk, semantic-variation and coherence signals;
-- decision states, flags, errors and completeness diagnostics;
-- prompt families, prompt histories and controlled test-corpus information;
-- response-level artefacts and diagnostic material;
-- token consumption, execution cost and cost-efficiency indicators;
-- latency, runtime-performance and infrastructure-effort signals;
-- information-density and generation-efficiency indicators;
-- token-saving or generation-stop observations, where applicable;
-- provider, model, routing, hosting and deployment identifiers;
-- request, trace and correlation identifiers;
-- execution timestamps and runtime-continuity information;
-- raw API, streaming and diagnostic payloads;
-- internal review notes, governance reasons and contextual interpretation records;
-- the private registry linking observed systems to stable de-identified `PROFILE-XXXXXX` identifiers.
-
-These materials are not published because they may disclose system identities, prompt designs, response content, operational architecture, proprietary measurement methods or confidential runtime traces.
+This separation supports public scrutiny without exposing confidential operational or identifying information.
 
 ---
 
-## Why this distinction matters
-
-The public baseline makes recurring behavioural signals visible, inspectable and comparable over time.
-
-The private measurement boundary preserves the deeper evidence required for:
-
-- controlled replay;
-- technical investigation;
-- longitudinal analysis;
-- cost and efficiency assessment;
-- governance review;
-- context-specific interpretation.
-
-The public release is therefore designed to support scrutiny and reproducibility without exposing the systems, traces and operational artefacts from which the measurements are derived.
-
----
-
-## De-identification and residual re-identification risk
-
-This release is **de-identified**. It is not presented as irreversibly anonymous.
-
-Provider names, model names, endpoints, raw responses, detailed traces, precise execution timestamps and the private profile mapping are not published.
+## De-identification
 
 Public profiles use stable opaque identifiers in the format:
 
-`PROFILE-XXXXXX`
+```text
+PROFILE-XXXXXX
+```
 
 These identifiers are not derived from ranking, performance, provider names or model names.
 
-The private mapping registry is retained separately and is not included in this repository or in any public release.
+The private mapping between public profiles and the observed systems is retained separately.
 
-Because the experimental protocol and question families are reproducible in principle, a third party with comparable API access, model availability and execution conditions may attempt to infer the identity of one or more profiles.
+The releases are **de-identified**. They are not presented as irreversibly anonymous.
 
-NeoMundi therefore documents re-identification as a residual and accepted publication risk.
-
-The objective is not to claim impossible anonymity. It is to prevent direct attribution while preserving sufficient methodological transparency for independent scrutiny.
+Residual re-identification risk is documented as a publication limitation.
 
 ---
 
-## What this baseline is not
+## What this programme is not
 
-This baseline is not:
+The NeoMundi Weekly Barometer is not:
 
 - a provider ranking;
 - a model leaderboard;
@@ -236,4 +245,35 @@ This baseline is not:
 - a substitute for human review;
 - a substitute for governance or domain-specific validation.
 
-It is a public quantitative reference point for observing changes in AI runtime behaviour over time.
+It is a public metrological instrument for observing AI runtime behaviour over time.
+
+---
+
+## Scientific principles
+
+The programme follows six principles:
+
+1. **Measure before interpreting.**
+2. **Repeat before generalising.**
+3. **Characterise variation before declaring drift.**
+4. **Never confuse stability with truth.**
+5. **Distinguish observation, interpretation and causal attribution.**
+6. **Treat every signal as an element of evidence, not as a verdict.**
+
+---
+
+## Repository navigation
+
+| Resource | English | Français |
+|---|---|---|
+| Programme overview | [README.md](./README.md) | [README.fr.md](./README.fr.md) |
+| Active methodology | [methodology.md](./methodology.md) | [methodologie.md](./methodologie.md) |
+| Calibration protocol | [CALIBRATION.md](./CALIBRATION.md) | [CALIBRATION.fr.md](./CALIBRATION.fr.md) |
+| Public Baseline V1 | [baseline/README.md](./baseline/README.md) | [baseline/README.fr.md](./baseline/README.fr.md) |
+| Baseline methodology | [baseline/METHODOLOGY.md](./baseline/METHODOLOGY.md) | [baseline/METHODOLOGY.fr.md](./baseline/METHODOLOGY.fr.md) |
+| Weekly releases | [releases/](./releases/) | [releases/](./releases/) |
+
+---
+
+**NeoMundi Weekly Barometer**  
+*Runtime measurement before governance claims.*
