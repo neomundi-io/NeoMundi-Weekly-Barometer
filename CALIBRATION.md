@@ -1,3 +1,5 @@
+🌐 **Language:** [English](./CALIBRATION.md) · [Français](./CALIBRATION.fr.md)
+
 # NeoMundi Weekly Barometer
 
 ## Calibration Protocol
