@@ -1,3 +1,5 @@
+🌐 **Language:** [English](./METHODOLOGY.md) · [Français](./METHODOLOGY.fr.md)
+
 # NeoMundi Weekly Barometer — Baseline V1 Methodology
 
 **Version:** `v1.1`  
