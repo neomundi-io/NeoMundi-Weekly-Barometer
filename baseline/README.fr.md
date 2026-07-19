@@ -2,134 +2,146 @@
 
 **[🇫🇷 Français](README.fr.md)** · **[🇬🇧 Read the English version](README.md)**
 
-# NeoMundi Weekly Barometer — Baseline V1
+# Baromètre Hebdomadaire NeoMundi — Baseline V1
 
-**12 systèmes IA anonymisés · 4 questions fixes · 100 répétitions par question · 3 vagues d’exécution · 14 400 observations finalisées**
+**12 profils d’IA désidentifiés · 4 questions fixes · 100 répétitions par question · 3 vagues d’exécution · 14 400 observations finalisées**
 
-Ce dossier contient la première release publique quantitative de la baseline du NeoMundi Weekly Barometer.
+Ce répertoire contient la première publication quantitative de référence du **Baromètre Hebdomadaire NeoMundi**.
 
-Il fournit une cartographie de référence anonymisée des comportements runtime observés sur un panel de systèmes d’IA générative, dans des conditions de mesure répétées.
+Il fournit une mesure de référence désidentifiée du comportement runtime de systèmes d’IA générative observés dans des conditions répétées et contrôlées.
 
-L’objectif de cette baseline est simple : établir le point de référence initial à partir duquel les évolutions futures du comportement observé des IA pourront être mesurées.
+Son objectif est d’établir une première référence quantitative à partir de laquelle les évolutions hebdomadaires futures du comportement observé des IA pourront être mesurées dans le temps.
 
 ---
 
 ## Ce qu’est cette baseline
 
-Cette baseline n’est ni un classement, ni une certification, ni un leaderboard de benchmark, ni une déclaration sur une IA « meilleure » qu’une autre.
+Cette baseline n’est ni un classement, ni une certification, ni un leaderboard de benchmark, ni une désignation du « meilleur » système d’IA.
 
-C’est un artefact de mesure de référence.
+Il s’agit d’un artefact public de mesure de référence.
 
-Elle documente la manière dont des systèmes anonymisés se sont comportés pendant une campagne d’observation définie, à travers des exécutions répétées des mêmes quatre questions. Elle rend visibles des différences de stabilité, de signaux de validité factuelle, de cohérence, de variation sémantique, de comportement de décision, de bandes de latence et de variation entre vagues d’exécution.
+Elle documente le comportement de profils d’IA désidentifiés au cours d’une campagne d’observation définie, fondée sur des exécutions répétées des mêmes quatre questions.
 
-Les futurs Weekly Barometers utiliseront cette release comme couche de comparaison afin d’identifier si le comportement observé reste comparable, évolue progressivement ou entre dans un régime runtime distinct.
+Elle rend visibles les différences observées en matière de :
+
+- stabilité ;
+- cohérence ;
+- signaux de risque factuel ;
+- variation sémantique ;
+- comportement décisionnel ;
+- plages de latence ;
+- variation entre les vagues d’exécution.
+
+Les prochaines publications du Baromètre Hebdomadaire pourront utiliser cette baseline comme couche de comparaison afin d’évaluer si le comportement observé reste comparable, évolue progressivement ou entre dans un régime runtime potentiellement distinct.
 
 ---
 
 ## Cadre de mesure
 
-La baseline est dérivée de :
+La baseline repose sur :
 
-* **12 profils de systèmes anonymisés**
-* **4 questions fixes**
-* **100 répétitions par question**
-* **3 vagues d’exécution répétées**
-* **1 200 observations par profil anonymisé**
-* **14 400 observations finalisées au total**
+- **12 profils d’IA désidentifiés**
+- **4 questions fixes**
+- **100 répétitions par question**
+- **3 vagues d’exécution répétées**
+- **1 200 observations par profil**
+- **14 400 observations finalisées au total**
 
-Toutes les observations prévues ont été réalisées.
+Toutes les observations planifiées ont été réalisées.
 
-Un incident limité de collecte a été remédié dans la même configuration de mesure. La cellule concernée est explicitement identifiée dans les données publiques par les champs `remediated_complete` et `remediated_observation_count`.
+Un incident limité de collecte a été corrigé dans la même configuration de mesure. La cellule concernée est explicitement identifiée dans les données publiques au moyen des champs `remediated_complete` et `remediated_observation_count`.
 
 ---
 
 ## Les quatre questions fixes
 
-La campagne associe quatre conditions de réponse différentes.
+La campagne combine quatre conditions de réponse distinctes.
 
-### NM-WEEKLY-Q01 — Raisonnement
+### `NM-WEEKLY-Q01` — Raisonnement
 
-Une batte et une balle coûtent 1,10 € au total. La batte coûte 1 € de plus que la balle. Combien coûte la balle ?
+> Une batte et une balle coûtent 1,10 € au total.  
+> La batte coûte 1 € de plus que la balle.  
+> Combien coûte la balle ?
 
-### NM-WEEKLY-Q02 — Explication scientifique
+### `NM-WEEKLY-Q02` — Explication scientifique
 
-Pourquoi les saisons existent-elles sur Terre ?
+> Pourquoi les saisons se produisent-elles sur Terre ?
 
-### NM-WEEKLY-Q03 — Question conceptuelle ouverte
+### `NM-WEEKLY-Q03` — Question conceptuelle ouverte
 
-Pourquoi une réponse IA stable n’est-elle pas nécessairement factuellement correcte ?
+> Pourquoi une réponse stable produite par une IA n’est-elle pas nécessairement factuellement correcte ?
 
-### NM-WEEKLY-Q04 — Question épistémique ouverte
+### `NM-WEEKLY-Q04` — Question épistémique ouverte
 
-Donnez un exemple de croyance largement admise qui pourrait être fausse. Expliquez comment elle pourrait être vérifiée.
+> Donnez un exemple de croyance largement admise qui pourrait être fausse et expliquez comment elle pourrait être vérifiée.
 
-Ces questions ont été répétées dans les mêmes conditions de campagne afin d’observer si les systèmes se comportent de manière comparable face au raisonnement, à l’explication scientifique, à l’interprétation conceptuelle et à l’incertitude épistémique ouverte.
+Ces questions ont été répétées dans les mêmes conditions de campagne afin d’observer si les systèmes se comportent de manière cohérente selon des situations de raisonnement, d’explication scientifique, d’interprétation conceptuelle et d’incertitude épistémique ouverte.
 
-Les questions sont publiques afin que chacun puisse comprendre la nature des tâches observées et reproduire des conditions d’interrogation comparables.
+Les questions sont publiques afin que les lecteurs puissent comprendre la nature des tâches observées et reproduire des conditions d’interrogation comparables.
 
 ---
 
-## Photographie initiale de la baseline
+## Photographie quantitative de la baseline
 
-Cette release établit le premier point de référence quantitatif pour les futures comparaisons longitudinales.
+Cette publication établit le premier point de référence quantitatif destiné aux comparaisons longitudinales futures.
 
-Sur les 12 profils anonymisés :
+Sur les 12 profils désidentifiés :
 
-* la stabilité moyenne observée est de **0,8165** ;
-* la cohérence moyenne observée est de **0,7866** ;
-* le signal moyen d’hallucination factuelle est de **0,0257** ;
-* le signal moyen d’instabilité sémantique est de **0,0189** ;
-* la variabilité inter-run moyenne est de **0,0081** ;
-* **96,57 %** des observations aboutissent à une décision `ALLOW` ;
-* **3,37 %** aboutissent à une décision `FLAG` ;
-* **0,06 %** aboutissent à une décision `ERROR`.
+- la stabilité moyenne observée est de **0,8165** ;
+- la cohérence moyenne observée est de **0,7866** ;
+- le signal moyen de risque factuel est de **0,0257** ;
+- le signal moyen d’instabilité sémantique est de **0,0189** ;
+- la variabilité moyenne entre les vagues est de **0,0081** ;
+- **96,57 %** des observations ont produit l’état `ALLOW` ;
+- **3,37 %** ont produit l’état `FLAG` ;
+- **0,06 %** ont produit l’état `ERROR`.
 
-La baseline montre également des écarts significatifs entre les profils anonymisés :
+La baseline met également en évidence des différences mesurables entre les profils désidentifiés :
 
-* la stabilité observée varie de **0,8005** à **0,8274** ;
-* la cohérence observée varie de **0,7612** à **0,8042** ;
-* le signal d’hallucination factuelle varie de **0,0018** à **0,0544** ;
-* l’instabilité sémantique varie de **0,0006** à **0,0723** ;
-* la variabilité inter-run varie de **0,0046** à **0,0164**.
+- la stabilité observée varie de **0,8005** à **0,8274** ;
+- la cohérence observée varie de **0,7612** à **0,8042** ;
+- le signal de risque factuel varie de **0,0018** à **0,0544** ;
+- l’instabilité sémantique varie de **0,0006** à **0,0723** ;
+- la variabilité entre les vagues varie de **0,0046** à **0,0164**.
 
-Ces valeurs constituent des mesures de référence, pas des verdicts.
+Ces valeurs sont des mesures de référence, et non des verdicts.
 
-Elles ont pour fonction de rendre mesurables les évolutions futures de comportement dans le temps.
+Elles visent à rendre mesurables les évolutions comportementales futures dans le temps.
 
 ---
 
 ## Artefacts publics
 
-| Fichier                                 | Rôle                                                                                          |
-| --------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `public_manifest.json`                  | Périmètre de la release, cadre de mesure, politique d’identité et liste des artefacts publiés |
-| `public_profiles_summary.csv`           | Un profil comportemental quantitatif anonymisé par système observé                            |
-| `public_question_profiles.csv`          | Comportement de chaque profil selon les quatre questions fixes                                |
-| `public_decision_distribution.csv`      | Distribution agrégée des décisions observées : `ALLOW`, `FLAG` et `ERROR`                     |
-| `public_exclusions_and_limitations.csv` | Limites de publication, exclusions et limites méthodologiques                                 |
-| `METHODOLOGY.md`                        | Définitions de mesure, politique de couverture et limites d’interprétation                    |
-| `VERIFICATION_SUMMARY.json`             | Synthèse de vérification et d’intégrité de la release                                         |
+| Fichier | Fonction |
+|---|---|
+| `public_manifest.json` | Périmètre de la publication, cadre de mesure, politique d’identité et inventaire des artefacts publiés |
+| `public_profiles_summary.csv` | Un enregistrement quantitatif agrégé par profil désidentifié |
+| `public_question_profiles.csv` | Résultats quantitatifs agrégés par profil et par question |
+| `public_decision_distribution.csv` | Distribution agrégée des états `ALLOW`, `FLAG` et `ERROR` observés |
+| `public_exclusions_and_limitations.csv` | Limites de publication, exclusions et limites méthodologiques |
+| `METHODOLOGY.md` | Définitions des mesures, politique de couverture et limites d’interprétation |
+| `VERIFICATION_SUMMARY.json` | Résumé de vérification et d’intégrité de la publication |
 
 ---
 
 ## Comment lire les données publiques
 
-La release publique fournit des métriques quantitatives avec :
+La publication fournit des métriques quantitatives comprenant :
 
-* moyennes ;
-* médianes ;
-* écarts-types ;
-* valeurs minimales et maximales observées ;
-* nombre d’observations par métrique ;
-* taux de couverture ;
-* statut de couverture ;
-* statut de remédiation lorsque cela s’applique.
+- des moyennes ;
+- des médianes ;
+- des écarts-types ;
+- des valeurs minimales et maximales observées ;
+- des volumes d’observations par métrique ;
+- des taux de couverture ;
+- des statuts de couverture ;
+- des statuts de remédiation lorsque cela s’applique.
 
-Une valeur `0.0` signifie que la valeur observée pour cette métrique est nulle.
+Une valeur de `0.0` signifie que la valeur observée de la métrique est égale à zéro.
 
-Une métrique absente ou indisponible n’est pas représentée par un faux zéro. La couverture par métrique est publiée séparément au moyen des champs `*_n`, `*_coverage_rate` et `*_coverage_status`.
+Une métrique manquante ou indisponible n’est pas représentée par un faux zéro. La couverture propre à chaque métrique est publiée séparément au moyen des champs `*_n`, `*_coverage_rate` et `*_coverage_status`.
 
-Une cellule marquée `complete` signifie que l’ensemble d’exécutions prévu a été réalisé.
+Une cellule marquée `complete` signifie que l’ensemble des exécutions prévues a été réalisé.
 
 Une cellule marquée `remediated_complete` signifie qu’un incident limité de collecte a été corrigé dans la même configuration de mesure avant agrégation.
 
@@ -137,111 +149,131 @@ Une cellule marquée `remediated_complete` signifie qu’un incident limité de 
 
 ## Indicateurs publics
 
-La baseline comprend les indicateurs publics suivants.
-
 ### Stabilité
 
-Capacité observée d’un système à produire des réponses comparables lorsqu’une même question est répétée.
+Capacité observée d’un système à produire des réponses comparables lorsque la même question est répétée dans des conditions similaires.
+
+La stabilité ne constitue pas une preuve d’exactitude factuelle.
 
 ### Cohérence
 
-Cohérence interne observée des réponses générées selon le protocole de la campagne.
+Consistance logique ou structurelle observée des réponses générées dans le cadre du protocole de campagne.
 
-### Signal d’hallucination factuelle
+La cohérence ne constitue pas une preuve de vérité.
 
-Signal observé de fragilité factuelle selon la méthode d’évaluation utilisée dans cette campagne.
+### Signal de risque factuel
 
-Il ne s’agit pas d’un score universel de vérité et il doit toujours être interprété en fonction du jeu de questions, du protocole d’évaluation et de la fenêtre d’observation.
+Indication observée de fragilité factuelle selon la méthode d’évaluation utilisée dans cette campagne.
+
+Il ne s’agit pas d’un score universel de vérité. Cet indicateur doit être interprété en relation avec les questions, le protocole d’évaluation, la couverture et la fenêtre d’observation.
 
 ### Instabilité sémantique
 
-Variation observée dans le contenu sémantique ou dans le sens utile des réponses à travers des exécutions répétées.
+Variation observée du contenu sémantique ou du sens utile des réponses au travers d’exécutions répétées.
 
-### Comportement de décision
+Une variation sémantique ne constitue pas, à elle seule, une preuve d’erreur factuelle.
 
-Distribution observée des décisions `ALLOW`, `FLAG` et `ERROR`.
+### Comportement décisionnel
 
-Ces décisions décrivent le comportement de la couche de mesure et de gouvernance pendant la campagne. Elles ne constituent pas une certification de sécurité.
+Distribution observée des états `ALLOW`, `FLAG` et `ERROR`.
 
-### Variabilité inter-run
+Ces états décrivent le comportement de la couche de mesure et de gouvernance pendant la campagne. Ils ne constituent ni une certification de sécurité ni une décision de déploiement.
+
+### Variabilité entre les vagues
 
 Variation observée entre les trois vagues d’exécution répétées.
 
-Cet indicateur est utile pour détecter des motifs de variation précoces. Il ne doit pas être interprété comme une estimation de stabilité à long horizon.
+Cet indicateur est utile pour identifier des premiers schémas de variation. Il ne doit pas être interprété comme une estimation de stabilité à long terme.
 
-### Bande de latence
+### Plage de latence
 
-La latence runtime observée est publiée sous forme de bandes larges, plutôt que sous la forme de timings exacts au niveau infrastructure.
+La latence runtime observée est publiée sous forme de plages larges plutôt que sous forme de mesures exactes au niveau de l’infrastructure.
 
-Cela préserve un contexte opérationnel utile tout en réduisant une exposition inutile à la réidentification.
+Cette approche préserve un contexte opérationnel utile tout en réduisant l’exposition inutile au risque de réidentification.
 
 ### `delta_g`
 
-`delta_g` est publié comme signal avancé de variation runtime.
+`delta_g` est publié comme un signal observable avancé de variation runtime.
 
-Il est présenté comme une sortie observable du cadre de mesure. Il ne révèle ni la composition interne, ni les seuils, ni la logique de pondération, ni les règles de calcul propriétaires du cadre NeoMundi.
+Il est présenté comme une sortie du cadre de mesure NeoMundi. Sa publication ne divulgue ni sa composition interne, ni ses seuils, ni sa logique de pondération, ni ses règles de calcul propriétaires.
+
+Aucun indicateur individuel ne doit être interprété isolément comme une évaluation complète de la qualité, de la véracité, de la sécurité ou de la gouvernabilité d’un système.
+
+---
+
+## Périmètre de la publication publique
+
+Cette publication diffuse des résultats agrégés et désidentifiés afin que les chiffres annoncés, les niveaux de couverture, les distributions décisionnelles et les visualisations puissent être examinés publiquement.
+
+Elle est volontairement limitée.
+
+Elle ne représente pas l’intégralité du registre de mesure NeoMundi.
 
 ---
 
 ## Ce qui n’est volontairement pas publié
 
-Afin de préserver l’anonymisation, l’intégrité méthodologique et la distinction entre observation publique et corpus d’audit privé, cette release ne contient pas :
+Afin de préserver la désidentification, l’intégrité méthodologique et la distinction entre observation publique et éléments privés d’audit, cette publication n’inclut pas :
 
-* les noms des fournisseurs ;
-* les noms des modèles ;
-* le mapping privé des identités ;
-* les endpoints API ;
-* les détails de routage infrastructurel ;
-* les prompts bruts autres que les quatre questions de campagne publiées ;
-* les sorties brutes des modèles ;
-* les timestamps exacts ;
-* les traces de requêtes ;
-* les noms de fichiers source ;
-* les enregistrements privés d’audit ;
-* les détails privés d’implémentation ;
-* la logique de calcul propriétaire ;
-* les traces précises de latence au niveau infrastructure ;
-* les identifiants directs permettant de nommer publiquement les systèmes observés.
+- les noms des fournisseurs ;
+- les noms des modèles ;
+- le registre privé de correspondance des identités ;
+- les endpoints API ;
+- les détails de routage de l’infrastructure ;
+- les prompts bruts au-delà des quatre questions publiques de la campagne ;
+- les sorties brutes des modèles ;
+- les horodatages précis ;
+- les traces de requêtes ;
+- les noms des fichiers sources ;
+- les registres privés d’audit ;
+- les détails privés d’implémentation ;
+- la logique de calcul propriétaire ;
+- les traces exactes de latence au niveau de l’infrastructure ;
+- les identifiants directs permettant de nommer les systèmes dans la publication publique.
 
-La publication est anonymisée, mais aucune méthode de désidentification ne peut supprimer tout risque théorique de réidentification lorsqu’un acteur externe dispose de systèmes comparables, des mêmes questions, de conditions de timing similaires et d’une infrastructure d’exécution comparable.
+La publication est désidentifiée. Elle n’est pas présentée comme irréversiblement anonyme.
 
-NeoMundi ne publie pas le mapping des identités et le conserve confidentiel.
+Aucune méthode de désidentification ne peut éliminer tout risque théorique de réidentification lorsqu’un acteur externe dispose d’un accès à des systèmes comparables, aux prompts, à des conditions temporelles similaires et à une infrastructure d’exécution comparable.
+
+NeoMundi ne publie pas le registre de correspondance des identités et le conserve séparément.
 
 ---
 
-## Note importante d’interprétation
+## Limite importante d’interprétation
 
-Cette baseline documente un comportement runtime observé selon un protocole et une fenêtre temporelle définis.
+Cette baseline documente le comportement runtime observé dans le cadre d’un protocole et d’une fenêtre d’observation définis.
 
 Elle doit être interprétée comme :
 
-* comparative ;
-* contextuelle ;
-* exploratoire ;
-* reproductible au niveau des conditions d’interrogation ;
-* impropre à soutenir des affirmations universelles sur le comportement futur de tous les systèmes.
+- comparative ;
+- contextuelle ;
+- limitée par le protocole ;
+- reproductible au niveau des conditions d’interrogation ;
+- inadaptée à des affirmations universelles portant sur tous les comportements futurs d’un système.
 
-Les résultats ne démontrent pas qu’un profil anonymisé est globalement « meilleur » ou « moins bon » qu’un autre.
+Les résultats ne permettent pas d’établir qu’un profil désidentifié est globalement « meilleur » ou « moins bon » qu’un autre.
 
-L’objectif est d’observer les comportements, non de construire un classement public.
+L’objectif est d’observer des signaux comportementaux, et non de créer un classement public.
+
+> Un signal est une observation qui nécessite une interprétation, et non un verdict.
 
 ---
 
 ## Usages prévus
 
-Cette release est destinée à soutenir :
+Cette publication vise à soutenir :
 
-* la revue méthodologique ;
-* la recherche sur l’observabilité runtime des IA ;
-* la discussion sur la stabilité, la validité factuelle et les variations comportementales ;
-* les comparaisons longitudinales futures ;
-* les contributions scientifiques ;
-* la revue orientée gouvernance ;
-* le développement de pratiques de mesure IA interprétables.
+- l’examen méthodologique ;
+- la recherche sur l’observation runtime des IA ;
+- l’analyse de la stabilité, du risque factuel et de la variation comportementale ;
+- les futures comparaisons longitudinales ;
+- les contributions scientifiques ;
+- l’examen orienté gouvernance ;
+- le développement de pratiques interprétables de mesure des IA.
 
-Les futurs Weekly Barometers compareront de nouvelles campagnes d’observation à cette baseline afin d’identifier des changements significatifs dans les comportements observés au fil du temps.
+Les prochaines publications du Baromètre Hebdomadaire pourront comparer les nouvelles campagnes d’observation à cette baseline afin d’identifier les évolutions significatives du comportement observé dans le temps.
 
 ---
 
-**NeoMundi Weekly Barometer**
-*Observer le runtime avant de prétendre gouverner.*
+**Baromètre Hebdomadaire NeoMundi**  
+*Mesurer le runtime avant toute conclusion de gouvernance.*
