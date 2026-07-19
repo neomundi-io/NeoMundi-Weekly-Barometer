@@ -1,3 +1,5 @@
+🌐 **Langue :** [Français](./methodologie.md) · [English](./methodology.md)
+
 # NeoMundi Weekly Barometer
 
 ## Méthodologie du Baromètre Hebdomadaire NeoMundi
