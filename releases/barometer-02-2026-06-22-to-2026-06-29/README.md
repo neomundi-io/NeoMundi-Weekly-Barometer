@@ -2,8 +2,15 @@
 
 **Campaign:** `neomundi_barometer_2026_w26`
 **Observation period:** 22 June 2026 to 29 June 2026
-**Publication form:** aggregated and de-identified
+**Publication form:** Aggregated and de-identified
 **Scope:** 12 de-identified profiles · 4 fixed question families · 100 repetitions per cell · 4,800 executions launched
+
+## Documentation
+
+* [Public methodology — English](../../methodology.md)
+* [Méthodologie publique — Français](../../methodologie.md)
+* [Public baseline](../../baseline/)
+* [Repository overview](../../README.md)
 
 ## Overview
 
@@ -22,23 +29,12 @@ For this campaign:
 
 ## Public files
 
-* `public_overview.json`
-  Campaign totals, global metrics, coverage information and score-dependency disclosures.
-
-* `public_profiles_summary.csv`
-  Aggregated results for each de-identified profile (`PROFILE-XXXXXX`).
-
-* `public_questions_summary.csv`
-  Aggregated results by question family.
-
-* `public_regime_distribution.csv`
-  Distribution of observed regimes: normal signal, semantic variation, factual alert, combined alert and incomplete measurement.
-
-* `public_metric_contract.json`
-  Definitions, intended meanings and interpretation limits for the published metrics.
-
-* `public_manifest.json`
-  Release inventory, integrity hashes and campaign provenance information.
+* `public_overview.json` — campaign totals, global metrics, coverage information and score-dependency disclosures.
+* `public_profiles_summary.csv` — aggregated results for each de-identified profile (`PROFILE-XXXXXX`).
+* `public_questions_summary.csv` — aggregated results by question family.
+* `public_regime_distribution.csv` — distribution of observed regimes: normal signal, semantic variation, factual alert, combined alert and incomplete measurement.
+* `public_metric_contract.json` — definitions, intended meanings and interpretation limits for the published metrics.
+* `public_manifest.json` — release inventory, integrity hashes and campaign provenance information.
 
 ## What is deliberately not published
 
@@ -69,9 +65,3 @@ A semantic-variation signal does not, by itself, establish a factual error. Like
 The public artefacts can be checked for internal consistency using the file hashes provided in `public_manifest.json`.
 
 Reproducing the campaign from source requires access to the private exports and remains subject to NeoMundi Observatory governance safeguards.
-
-## Related resources
-
-* NeoMundi Weekly Barometer baseline: public reference campaign built from 14,400 finalised observations.
-* NeoMundi Observatory methodology.
-* Barometer #2 publication article.
