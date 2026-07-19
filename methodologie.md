@@ -1,593 +1,468 @@
 # NeoMundi Weekly Barometer
 
-## Méthodologie du baromètre hebdomadaire multi-signaux des comportements IA
+## Méthodologie du Baromètre Hebdomadaire NeoMundi
 
-**Version :** `v1.0`
-**Statut :** protocole initial gelé
-**Objet :** calibration technique, constitution d’une baseline et observation longitudinale des régimes de comportement des systèmes d’IA générative
-
----
-
-# 1. Finalité du projet
-
-Le **NeoMundi Weekly Barometer** est un protocole récurrent de répétitions contrôlées destiné à observer l’évolution du comportement des systèmes d’IA générative dans le temps.
-
-Les benchmarks traditionnels produisent généralement une photographie ponctuelle : ils évaluent un système à un instant donné sur un ensemble de tâches déterminées.
-
-Le baromètre NeoMundi poursuit un objectif complémentaire :
-
-> observer les trajectoires comportementales des systèmes IA et rendre visibles les changements silencieux qui peuvent apparaître d’une semaine à l’autre.
-
-Le projet ne vise pas à produire un classement commercial supplémentaire ni à réduire le comportement d’un modèle à un score unique.
-
-Il vise à caractériser des **régimes de comportement** à partir de plusieurs signaux complémentaires.
+**Version :** `v2.0`  
+**Statut :** protocole public actif  
+**Objet :** observation longitudinale, répétée et multi-signaux du comportement runtime des systèmes d’IA générative
 
 ---
 
-# 2. Hypothèse centrale
+## 1. Finalité du projet
 
-Une réponse isolée ne suffit pas à caractériser un système génératif.
+Le **NeoMundi Weekly Barometer** est un programme récurrent de mesure destiné à observer l’évolution du comportement des systèmes d’IA générative dans le temps.
 
-Lorsqu’un même prompt est soumis cent fois à un même système dans des conditions contrôlées, il devient possible d’observer :
+Les benchmarks traditionnels évaluent généralement un modèle à un instant donné, sur un ensemble de tâches prédéfinies.
 
-* la stabilité des réponses ;
-* leur dispersion ;
-* les variations de structure et de longueur ;
-* les trajectoires de `G` et `ΔG` ;
-* les occurrences de `FLAG` et `DROP` ;
-* les évolutions de densité informationnelle ;
-* les coûts ;
-* la latence ;
-* l’apparition d’anomalies.
+Le Baromètre NeoMundi poursuit un objectif complémentaire :
 
-Lorsque cette opération est répétée semaine après semaine avec les mêmes prompts, les mêmes paramètres et la même chaîne de mesure, les campagnes successives constituent une série temporelle.
+> observer les trajectoires comportementales des systèmes d’IA et rendre visibles les changements qui peuvent apparaître silencieusement d’une semaine à l’autre.
 
-Le véritable saut méthodologique n’est donc pas uniquement la répétition.
+Le projet ne vise pas à produire un classement commercial, un leaderboard ou une certification générale des systèmes observés.
 
-C’est le passage :
+Il vise à produire des mesures répétées, comparables et documentées permettant de caractériser :
 
-> de la mesure ponctuelle à l’observation longitudinale.
+- la stabilité ;
+- la variation sémantique ;
+- la cohérence ;
+- les signaux de risque factuel ;
+- les régimes comportementaux ;
+- la couverture des mesures ;
+- certaines variations de coût, de latence ou d’effort runtime lorsqu’elles sont disponibles.
 
----
-
-# 3. Ce que le baromètre mesure
-
-Le baromètre vise à observer :
-
-* les changements de comportement d’un provider d’une semaine à l’autre ;
-* l’apparition de nouveaux profils de stabilité trompeuse ;
-* les variations de `G`, `ΔG`, `FLAG` et `DROP` ;
-* les évolutions de densité informationnelle ;
-* les variations de longueur et de dispersion ;
-* les écarts de coût et d’efficacité ;
-* les ruptures de régime comportemental ;
-* les providers qui deviennent plus instables, plus prudents ou plus efficaces dans le temps.
+Le Baromètre constitue ainsi un instrument d’observation longitudinale du comportement des IA.
 
 ---
 
-# 4. Ce que le baromètre ne permet pas d’affirmer directement
+## 2. Hypothèse centrale
 
-Le baromètre ne permet pas, à lui seul, de conclure :
+Une réponse isolée ne suffit pas à caractériser le comportement d’un système génératif.
 
-* qu’un provider dit systématiquement vrai ;
-* qu’un provider est globalement supérieur à un autre ;
-* qu’un changement observé provient nécessairement d’un changement de modèle ;
-* qu’une rupture comportementale a une cause technique unique ;
-* qu’une réponse stable est nécessairement exacte ;
-* qu’une réponse instable est nécessairement mauvaise.
+Lorsqu’un même prompt est soumis cent fois à un même système, dans des conditions contrôlées, il devient possible d’observer :
 
-La formulation correcte est :
+- la répétabilité des réponses ;
+- leur dispersion ;
+- leur variation sémantique ;
+- leur cohérence ;
+- les signaux de risque factuel ;
+- les états décisionnels ou régimes produits par la chaîne de mesure ;
+- les erreurs et mesures incomplètes ;
+- les variations runtime associées.
 
-> Un changement de régime comportemental a été observé.
+Lorsque cette opération est répétée chaque semaine avec les mêmes questions et une chaîne de mesure comparable, les campagnes successives forment une série longitudinale.
 
-La formulation à éviter est :
+Le saut méthodologique ne réside donc pas seulement dans la répétition.
 
-> Le provider a silencieusement changé de modèle.
+Il réside dans le passage :
 
-Lorsqu’une évolution est détectée, plusieurs causes peuvent être envisagées :
-
-* évolution du modèle ;
-* modification de configuration ;
-* changement de backend ;
-* ajustement d’API ;
-* A/B test ;
-* politique interne du provider ;
-* variation d’environnement d’exécution ;
-* bruit statistique normal.
-
-Le protocole observe un changement mesurable. Il n’en attribue pas automatiquement la cause.
+> de la mesure ponctuelle à l’observation du comportement dans le temps.
 
 ---
 
-# 5. Architecture générale du protocole
+## 3. Architecture générale du protocole
 
-## 5.1 Format cible hebdomadaire
+### 3.1 Format hebdomadaire
 
-Chaque semaine :
+Chaque campagne hebdomadaire comprend :
 
 ```text
-12 providers
-× 3 questions
+12 profils d’IA désidentifiés
+× 4 questions fixes
 × 100 répétitions
-= 3 600 générations
+= 4 800 exécutions planifiées
 ```
 
-Durée initiale recommandée :
+Les profils publics sont représentés par des identifiants opaques et stables au format :
 
 ```text
-12 semaines minimum
+PROFILE-XXXXXX
 ```
 
-Le protocole repose sur :
+Ces identifiants ne correspondent ni à un classement, ni à un niveau de performance, ni à une catégorie de fournisseur.
 
-* deux questions permanentes ;
-* une question tournante ;
-* un wording strictement figé ;
-* des paramètres contrôlés ;
-* la même chaîne de mesure ;
-* un horodatage systématique ;
-* un versionnage explicite des prompts et des campagnes.
+La correspondance entre les identifiants publics et les systèmes observés est conservée dans un registre privé séparé.
 
 ---
 
-## 5.2 Première vague de calibration
+### 3.2 Fenêtre de mesure
 
-La première campagne sert à valider la chaîne complète avant industrialisation.
+La fenêtre hebdomadaire de référence est :
 
 ```text
-6 providers
-× 3 questions
+lundi 00:00 UTC
+à
+dimanche 23:59 UTC
+```
+
+Les exécutions doivent être horodatées afin de préserver la traçabilité de la campagne et de permettre les comparaisons longitudinales.
+
+La publication publique peut intervenir après la clôture de la période, une fois les opérations de validation, d’agrégation et de contrôle terminées.
+
+---
+
+### 3.3 Conditions de comparabilité
+
+La comparabilité entre les campagnes repose notamment sur :
+
+- le maintien des quatre questions fixes ;
+- le versionnage explicite des prompts ;
+- une politique d’exécution documentée ;
+- une chaîne de mesure contrôlée ;
+- une procédure constante de désidentification ;
+- une validation systématique des fichiers ;
+- la conservation de la couverture réelle ;
+- l’absence de remplacement silencieux des données manquantes ;
+- le versionnage des scripts de génération et d’analyse.
+
+Une modification significative du protocole doit être documentée dans le manifeste de la publication concernée.
+
+---
+
+## 4. Les quatre questions fixes
+
+Les quatre questions couvrent des conditions de réponse distinctes.
+
+### Question 1 — Raisonnement
+
+**Le problème de la batte et de la balle**
+
+> Une batte et une balle coûtent 1,10 € au total.  
+> La batte coûte 1 € de plus que la balle.  
+> Combien coûte la balle ?
+
+Cette question permet notamment d’observer :
+
+- la répétabilité d’un raisonnement court ;
+- la stabilité de la réponse finale ;
+- la persistance éventuelle d’une erreur intuitive ;
+- la relation entre stabilité et exactitude.
+
+---
+
+### Question 2 — Explication scientifique
+
+**Les saisons sur Terre**
+
+> Pourquoi les saisons se produisent-elles sur Terre ?
+
+Cette question permet notamment d’observer :
+
+- la stabilité d’une explication scientifique ;
+- les variations de structure ;
+- les omissions ;
+- les simplifications ;
+- les signaux de risque factuel ;
+- la cohérence explicative.
+
+---
+
+### Question 3 — Question conceptuelle ouverte
+
+**Stabilité et vérité**
+
+> Pourquoi une réponse stable produite par une IA n’est-elle pas nécessairement factuellement correcte ?
+
+Cette question permet notamment d’observer :
+
+- la compréhension de la distinction entre répétabilité et vérité ;
+- la qualité de l’argumentation ;
+- la cohérence conceptuelle ;
+- la variation sémantique ;
+- les styles de prudence.
+
+---
+
+### Question 4 — Question épistémique ouverte
+
+**Croyances largement admises mais potentiellement fausses**
+
+> Donnez un exemple de croyance largement admise qui pourrait être fausse et expliquez comment elle pourrait être vérifiée.
+
+Cette question permet notamment d’observer :
+
+- la sélection spontanée d’un exemple ;
+- la prudence épistémique ;
+- les stratégies de vérification proposées ;
+- la variation des contenus produits ;
+- les risques de répétition stable d’une affirmation incorrecte.
+
+---
+
+## 5. Pourquoi les quatre questions restent séparées
+
+Les quatre questions ne doivent pas être réduites à un indicateur unique.
+
+Elles couvrent des conditions cognitives et comportementales différentes :
+
+| Question | Condition principale observée |
+|---|---|
+| `Q01` | Raisonnement court et réponse déterminée |
+| `Q02` | Explication scientifique |
+| `Q03` | Compréhension conceptuelle de la stabilité |
+| `Q04` | Variation épistémique et réponse ouverte |
+
+Une variation observée sur une question ouverte ne possède pas nécessairement la même signification qu’une variation observée sur une question fermée.
+
+Les résultats doivent donc être analysés :
+
+- globalement ;
+- par profil ;
+- par question ;
+- par métrique ;
+- dans le temps.
+
+---
+
+## 6. La Baseline Publique V1
+
+La Baseline V1 constitue la première référence quantitative publique du Baromètre.
+
+Elle comprend :
+
+```text
+12 profils désidentifiés
+× 4 questions
 × 100 répétitions
-= 1 800 générations
+× 3 vagues
+= 14 400 observations finalisées
 ```
 
-Identifiant recommandé :
+La baseline ne constitue pas une semaine ordinaire du Baromètre.
 
-```text
-NM-WEEKLY-W000-CALIBRATION
-```
+Elle représente une campagne de référence élargie, conçue pour établir un premier cadre quantitatif stable.
 
-Cette campagne peut devenir une semaine de référence uniquement si :
+Elle permet notamment :
 
-* les logs sont complets ;
-* les paramètres sont correctement tracés ;
-* les réponses ne sont pas tronquées silencieusement ;
-* les métriques sont calculées sans erreur ;
-* aucun `NaN` n’est remplacé silencieusement par zéro ;
-* les données sont comparables avec les futures campagnes.
+- d’observer la dispersion initiale des mesures ;
+- de documenter les différences entre questions ;
+- de fixer un premier point de comparaison ;
+- d’identifier les limites de couverture ;
+- de distinguer les variations ordinaires de changements potentiellement significatifs.
 
-Dans le cas contraire, elle reste un test technique jetable.
+Les campagnes hebdomadaires suivantes peuvent être comparées à cette référence, sans que toute différence soit automatiquement qualifiée de dérive.
 
 ---
 
-## 5.3 Micro-batch obligatoire avant lancement
+## 7. Signaux observés
 
-Avant chaque première campagne ou modification importante de la chaîne :
+Selon la campagne et la couverture disponible, le Baromètre publie ou documente plusieurs catégories de signaux.
 
-```text
-6 providers
-× 3 questions
-× 3 répétitions
-= 54 générations
-```
+### 7.1 Stabilité
 
-Objectif :
+La stabilité décrit le degré de répétabilité des réponses produites dans des conditions comparables.
 
-* vérifier la présence de toutes les colonnes ;
-* contrôler les métriques ;
-* identifier les paramètres refusés ou ignorés ;
-* détecter les troncatures ;
-* vérifier les coûts ;
-* contrôler les erreurs API ;
-* vérifier l’horodatage ;
-* confirmer l’absence de valeurs incohérentes.
+Elle ne constitue pas une preuve d’exactitude.
 
-La campagne complète ne doit être lancée qu’après validation de ce micro-batch.
+Une réponse peut être :
+
+- stable et correcte ;
+- stable et incorrecte ;
+- variable et correcte ;
+- variable et incorrecte.
 
 ---
 
-# 6. Les trois questions NeoMundi
+### 7.2 Variation sémantique
 
-## 6.1 NM-WEEKLY-Q01 — Le risque invisible
+La variation sémantique décrit les écarts de contenu ou de formulation observés entre des réponses produites à partir d’une même question.
 
-### Hook public
+Une variation sémantique ne constitue pas, à elle seule, une erreur.
 
-> Quel est le risque IA que les entreprises sous-estiment le plus ?
+Elle peut refléter :
 
-### Prompt canonique figé
-
-```text
-Quel est le risque lié à l’utilisation de l’IA générative que les entreprises sous-estiment le plus aujourd’hui ?
-
-Identifiez ce risque en une phrase, puis expliquez :
-1. pourquoi il est sous-estimé ;
-2. dans quelle situation concrète il peut devenir critique ;
-3. quel contrôle minimal une organisation devrait mettre en place.
-
-Répondez en 200 mots maximum.
-```
-
-### Fonction méthodologique
-
-Cette question permet d’observer :
-
-* les priorités spontanées ;
-* les risques les plus fréquemment identifiés ;
-* les omissions ;
-* les styles de prudence ;
-* la stabilité du raisonnement ;
-* la dispersion entre providers ;
-* les évolutions d’une semaine à l’autre.
+- une reformulation ;
+- un changement de structure ;
+- une différence de profondeur ;
+- un changement d’exemple ;
+- une modification plus importante du contenu produit.
 
 ---
 
-## 6.2 NM-WEEKLY-Q02 — Stable, donc fiable ?
+### 7.3 Risque factuel
 
-### Hook public
+Le signal de risque factuel indique qu’une réponse présente des caractéristiques nécessitant une vérification complémentaire.
 
-> Une IA très stable peut-elle quand même se tromper ?
+Il ne constitue pas un jugement juridique ou une certification de fausseté.
 
-### Prompt canonique figé
+Il doit être interprété avec :
 
-```text
-Dans quelle mesure la stabilité d’une réponse générée par une IA constitue-t-elle un indicateur de fiabilité ?
-
-Expliquez :
-1. ce que la stabilité permet réellement d’observer ;
-2. ce qu’elle ne permet pas de conclure à elle seule ;
-3. un exemple concret de réponse stable mais incorrecte ;
-4. le contrôle complémentaire à mettre en place.
-
-Répondez en 200 mots maximum.
-```
-
-### Fonction méthodologique
-
-Cette question permet d’observer :
-
-* la compréhension du lien entre stabilité et fiabilité ;
-* les styles d’argumentation ;
-* la prudence du système ;
-* les simplifications abusives ;
-* les omissions ;
-* les variations de structure ;
-* les évolutions d’une semaine à l’autre.
+- la question concernée ;
+- le niveau de couverture ;
+- les autres signaux ;
+- les limites de la procédure de scoring ;
+- les éventuelles dépendances entre métriques.
 
 ---
 
-## 6.3 NM-WEEKLY-Q03-S01 — La question sous pression : santé
+### 7.4 Cohérence
 
-### Hook public
+La cohérence décrit la continuité logique ou structurelle observable dans la réponse.
 
-> Quelle erreur IA serait la plus coûteuse si elle atteignait directement l’utilisateur ?
+Une réponse cohérente n’est pas nécessairement vraie.
 
-### Prompt canonique — semaine 1
-
-```text
-Dans le secteur de la santé, quelle erreur produite par une IA générative serait la plus coûteuse si elle atteignait directement l’utilisateur ?
-
-Expliquez :
-1. le scénario précis ;
-2. la conséquence principale ;
-3. si l’erreur est rattrapable après diffusion ;
-4. si une supervision humaine est nécessaire ;
-5. si un mode d’observation après génération suffit ou si un contrôle pendant l’exécution devient pertinent.
-
-Répondez en 250 mots maximum.
-```
-
-### Fonction méthodologique
-
-Cette question constitue une **sonde sectorielle à fort enjeu**.
-
-Elle ne teste pas directement l’exactitude d’un diagnostic médical.
-
-Elle permet d’observer :
-
-* la capacité du système à identifier un scénario critique ;
-* sa compréhension du risque métier ;
-* sa perception du caractère rattrapable ou irréversible d’une erreur ;
-* son appréciation de la supervision nécessaire ;
-* sa distinction entre observation après génération et gouvernance pendant l’exécution.
+Inversement, une variation de cohérence ne permet pas à elle seule de conclure à une dégradation générale du système.
 
 ---
 
-# 7. Statut distinct des trois questions
+### 7.5 Régimes et états d’observation
 
-Les trois questions ne doivent pas être agrégées dans un indicateur unique.
+Les publications peuvent inclure des états tels que :
 
-| Question        | Fonction principale                                                      | Suivi longitudinal                              |
-| --------------- | ------------------------------------------------------------------------ | ----------------------------------------------- |
-| `NM-WEEKLY-Q01` | Observer la hiérarchisation des risques et les styles de prudence        | Oui                                             |
-| `NM-WEEKLY-Q02` | Observer la compréhension du lien entre stabilité, fiabilité et contrôle | Oui                                             |
-| `NM-WEEKLY-Q03` | Produire une sonde thématique sectorielle                                | Non, sauf répétition ultérieure du même secteur |
+```text
+NORMAL
+SEMANTIC_VARIATION
+FACTUAL_ALERT
+INCOMPLETE_MEASUREMENT
+```
 
-Les questions permanentes `Q01` et `Q02` constituent le noyau longitudinal.
+ou des états techniques et décisionnels documentés dans les fichiers de la campagne.
 
-La question `Q03` constitue une sonde éditoriale et sectorielle.
+Ces catégories servent à organiser les observations.
 
-Elle ne doit pas être utilisée comme une mesure directe de dérive d’une semaine à l’autre lorsque le secteur change.
+Elles ne constituent ni des classements, ni des niveaux universels de qualité.
 
 ---
 
-# 8. Rotation sectorielle de la question sous pression
+### 7.6 `delta_g`
 
-| Semaine | Secteur                                     |
-| ------: | ------------------------------------------- |
-|       1 | Santé                                       |
-|       2 | Juridique                                   |
-|       3 | Finance                                     |
-|       4 | Service public                              |
-|       5 | Cybersécurité                               |
-|       6 | Ressources humaines                         |
-|       7 | Assurance                                   |
-|       8 | Industrie                                   |
-|       9 | Éducation                                   |
-|      10 | Immobilier                                  |
-|      11 | Relation client                             |
-|      12 | Agent autonome doté d’une capacité d’action |
+`delta_g` est publié comme un signal observable avancé de variation runtime.
 
-La structure du prompt reste identique.
+Sa publication ne divulgue pas :
 
-Seul le secteur varie.
+- sa composition interne complète ;
+- ses seuils propriétaires ;
+- sa logique de pondération ;
+- l’intégralité de ses règles de calcul.
+
+Il ne doit pas être interprété isolément comme un verdict sur un système.
 
 ---
 
-# 9. Mesures natives et agrégats
+### 7.7 Couverture et complétude
 
-## 9.1 Principe
+La couverture indique la proportion des exécutions ou métriques pour lesquelles une mesure valide a pu être produite.
 
-Les métriques natives NeoMundi sont calculées à l’échelle de chaque réponse.
+Une campagne peut avoir réalisé l’ensemble des exécutions planifiées tout en présentant une couverture métrique légèrement inférieure à 100 %.
 
-Elles doivent rester indépendantes de la composition de la cohorte hebdomadaire.
-
-Cela concerne notamment :
-
-* `G` ;
-* `ΔG` ;
-* `FLAG` ;
-* `DROP` ;
-* la densité informationnelle ;
-* les métriques de longueur ;
-* les coûts ;
-* la latence.
-
-## 9.2 Point de vigilance
-
-Le risque méthodologique ne porte pas uniquement sur le Core.
-
-Il porte également sur les scripts d’agrégation, les graphiques et les analyses secondaires.
-
-Même si `G` est intrinsèque à chaque réponse, il faut éviter toute normalisation relative à la cohorte de la semaine.
-
-Exemple à éviter :
-
-```text
-Recalculer chaque semaine la position d’un provider relativement à la moyenne des providers présents dans la campagne.
-```
-
-Une telle normalisation détruirait la comparabilité temporelle.
-
-## 9.3 Règle de gel
-
-Pour le suivi longitudinal :
-
-* conserver les valeurs natives brutes ;
-* conserver les agrégats calculés à partir de ces valeurs brutes ;
-* utiliser une échelle intrinsèque stable ;
-* comparer les campagnes à une baseline gelée ;
-* ne jamais recalibrer automatiquement les métriques selon la cohorte de la semaine.
-
-### Vérification technique à effectuer
-
-Confirmer qu’aucune normalisation relative à la cohorte n’est introduite dans :
-
-* les scripts d’agrégation ;
-* les exports ;
-* les graphiques ;
-* les tableaux de synthèse ;
-* les analyses comparatives ;
-* les futurs seuils de rupture.
+Les erreurs, données absentes et observations non scorées ne doivent pas être remplacées silencieusement par zéro.
 
 ---
 
-# 10. Construction de la baseline
+## 8. Doctrine d’interprétation
 
-## 10.1 Pourquoi une baseline est indispensable
+Le Baromètre suit une règle fondamentale :
 
-Une variation n’est pas automatiquement une dérive.
+> un signal n’est pas un verdict.
 
-Pour détecter un changement, il faut d’abord caractériser le bruit naturel.
+Une observation ne permet pas, à elle seule, de conclure :
 
-Avant toute déclaration publique de rupture, il est nécessaire d’estimer :
+- qu’un système dit systématiquement vrai ;
+- qu’un système est globalement supérieur à un autre ;
+- qu’un changement provient d’une mise à jour de modèle ;
+- qu’une variation constitue une dégradation ;
+- qu’une réponse stable est fiable ;
+- qu’une réponse variable est incorrecte ;
+- qu’un système est conforme à une exigence réglementaire ;
+- qu’un système peut être déployé sans contrôle complémentaire.
 
-* la variance naturelle de `G` ;
-* la variance naturelle de `ΔG` ;
-* la dispersion habituelle ;
-* le taux normal de `FLAG` ;
-* le taux normal de `DROP` ;
-* la variation normale de densité informationnelle ;
-* les variations naturelles de longueur ;
-* la variation normale des coûts ;
-* la variation liée aux conditions d’exécution.
+La formulation appropriée est :
 
-## 10.2 Phase de baseline recommandée
+> un changement de comportement a été observé dans les conditions de la campagne.
 
-```text
-Semaines 1 à 3
-```
+L’attribution d’une cause nécessite des éléments supplémentaires.
 
-Pendant cette période :
+Les causes possibles peuvent notamment inclure :
 
-```text
-12 providers
-× 3 questions
-× 100 répétitions
-= 3 600 générations par semaine
-```
-
-Objectifs :
-
-* caractériser le bruit naturel ;
-* estimer la variance inter-semaines ;
-* identifier les métriques réellement discriminantes ;
-* pré-enregistrer les seuils ;
-* distinguer fluctuation normale et rupture probable.
-
-## 10.3 Doctrine de communication pendant la baseline
-
-Formulations possibles :
-
-> Des écarts de dispersion ont été observés entre les systèmes testés.
-
-> Certains régimes apparaissent plus réguliers que d’autres dans les conditions étudiées.
-
-> Les premières campagnes permettent de construire une baseline avant toute qualification de dérive.
-
-Formulation à éviter :
-
-> Ce provider s’est dégradé silencieusement.
+- une évolution du modèle ;
+- une modification du routage ;
+- un changement de configuration ;
+- une modification de l’API ;
+- un ajustement des politiques du fournisseur ;
+- une variation d’infrastructure ;
+- une expérimentation interne ;
+- une fluctuation statistique ;
+- une variation de la chaîne de mesure.
 
 ---
 
-# 11. Détection de rupture
+## 9. Observation longitudinale
 
-## 11.1 Périmètre
+La valeur principale du Baromètre réside dans la répétition des campagnes.
 
-Avec douze semaines de données, le baromètre permet principalement :
+Une observation isolée décrit un état.
 
-* d’identifier une rupture ;
-* d’observer une tendance forte ;
-* de repérer une dérive persistante ;
-* de signaler une anomalie.
+Une succession de campagnes permet d’observer :
 
-Il ne permet pas encore :
+- une stabilité persistante ;
+- une variation progressive ;
+- un retour à un régime antérieur ;
+- une rupture ponctuelle ;
+- un plateau ;
+- une anomalie persistante ;
+- une évolution spécifique à une question.
 
-* de modéliser une saisonnalité robuste ;
-* de construire une prévision temporelle avancée ;
-* d’attribuer automatiquement une cause technique.
+Une variation ne doit pas être qualifiée publiquement de dérive sur la base d’un seul indicateur ou d’une seule campagne sans analyse complémentaire.
 
-## 11.2 Règle minimale de qualification
+L’interprétation doit prendre en compte :
 
-Une évolution ne doit être qualifiée publiquement que si :
-
-* elle dépasse un seuil pré-enregistré ;
-* elle est observée sur plusieurs signaux cohérents ;
-* elle ne résulte pas d’une troncature ou d’une erreur de pipeline ;
-* elle persiste pendant au moins deux campagnes consécutives, sauf rupture exceptionnellement forte et documentée.
-
-## 11.3 Comparaisons multiples
-
-Le protocole génère de nombreuses séries :
-
-```text
-providers × questions × métriques × semaines
-```
-
-Le risque de faux positifs augmente mécaniquement avec le nombre de comparaisons.
-
-Les futures règles statistiques devront donc intégrer :
-
-* une exigence de persistance ;
-* une taille d’effet minimale ;
-* une procédure de contrôle des faux positifs ;
-* éventuellement un contrôle du taux de fausses découvertes (`FDR`).
-
-Ces règles devront être pré-enregistrées avant toute publication de rupture.
+- l’amplitude du changement ;
+- sa persistance ;
+- le nombre de signaux concernés ;
+- la couverture de la campagne ;
+- les erreurs techniques éventuelles ;
+- la variation naturelle observée dans les campagnes précédentes.
 
 ---
 
-# 12. Sensibilité différenciée selon les métriques
+## 10. Détection des changements de régime
 
-Les métriques ne disposent pas toutes de la même finesse de détection.
+Une évolution peut être examinée comme un changement potentiel de régime lorsqu’elle :
 
-Avec :
+- dépasse les variations habituellement observées ;
+- concerne plusieurs signaux cohérents ;
+- ne résulte pas d’une erreur connue du pipeline ;
+- ne résulte pas d’une troncature ;
+- présente une couverture suffisante ;
+- persiste dans le temps ou présente une amplitude exceptionnelle documentée.
 
-```text
-n = 100 répétitions
-```
+La détection d’un changement ne vaut pas attribution de cause.
 
-les métriques continues telles que :
+Les résultats publics doivent distinguer :
 
-* moyenne de `G` ;
-* moyenne de densité ;
-* longueur moyenne ;
-* latence moyenne ;
-* coût moyen ;
-
-peuvent être estimées avec une précision raisonnable.
-
-En revanche, les événements rares tels que :
-
-* `FLAG` ;
-* `DROP` ;
-* erreurs API exceptionnelles ;
-
-nécessitent davantage de prudence.
-
-Une variation faible d’un taux rare ne doit pas être surinterprétée.
-
-Les occurrences rares doivent être analysées :
-
-* en valeur absolue ;
-* en proportion ;
-* avec leur intervalle d’incertitude ;
-* sur plusieurs semaines ;
-* avec vérification du batch concerné.
+1. l’observation ;
+2. l’interprétation ;
+3. l’hypothèse causale éventuelle.
 
 ---
 
-# 13. Paramètres techniques à figer
+## 11. Validation des données
 
-Pour chaque campagne, conserver :
+Chaque campagne doit passer par une phase de validation avant agrégation et publication.
 
-* la liste des providers ;
-* les modèles demandés ;
-* les endpoints utilisés ;
-* les paramètres demandés ;
-* les paramètres effectivement acceptés lorsque l’information est disponible ;
-* la politique de seed ;
-* les limites de tokens ;
-* les prompts exacts ;
-* les éventuels system prompts ;
-* la fenêtre jour / heure ;
-* la version de la gateway ;
-* la version du pipeline de mesure ;
-* la version des scripts d’analyse.
+Cette validation vérifie notamment :
 
-## 13.1 Troncature
+- le nombre d’exécutions attendues ;
+- la présence des profils et questions prévus ;
+- la cohérence des index de répétition ;
+- l’absence de doublons non documentés ;
+- la présence des horodatages ;
+- la cohérence des fichiers sources ;
+- la présence des métriques attendues ;
+- l’identification des erreurs ;
+- l’identification des observations non scorées ;
+- la couverture par métrique ;
+- la cohérence des versions de scripts ;
+- la conformité du mapping privé de désidentification.
 
-Les prompts imposent une limite de 200 ou 250 mots.
+Aucune interpolation silencieuse ne doit être appliquée.
 
-La limite technique de génération doit rester suffisamment élevée pour éviter une coupure artificielle.
-
-Valeur initiale recommandée :
-
-```text
-max_tokens: 1024
-```
-
-Le champ suivant doit être loggé systématiquement :
-
-```text
-finish_reason
-```
-
-ou, selon les APIs :
-
-```text
-stop_reason
-```
-
-Toute réponse tronquée doit être identifiable.
+Toute observation exclue ou incomplète doit rester identifiable dans les données de travail ou dans les fichiers publics de limites.
 
 ---
 
-# 14. Logs obligatoires par génération
+## 12. Traçabilité technique
 
-Chaque appel doit produire un enregistrement structuré.
-
-## 14.1 Identifiants
+Selon les capacités du pipeline et des fournisseurs, les enregistrements privés peuvent inclure :
 
 ```text
 campaign_id
@@ -596,422 +471,202 @@ run_id
 repetition_index
 question_id
 prompt_version
-```
-
-## 14.2 Horodatage
-
-```text
 timestamp_utc
-```
-
-Format recommandé :
-
-```text
-ISO-8601 UTC
-```
-
-## 14.3 Provider et modèle
-
-```text
-provider_id
-endpoint
+profile_id
 requested_model
 returned_model
-system_fingerprint
-```
-
-Le champ `system_fingerprint` est conservé lorsqu’il est disponible.
-
-## 14.4 Prompt
-
-```text
-prompt_sha256
-system_prompt_sha256
-```
-
-Le hash porte sur le prompt exact envoyé.
-
-## 14.5 Paramètres
-
-```text
-generation_parameters_requested
-generation_parameters_effective
-```
-
-Les paramètres effectifs sont conservés lorsqu’ils sont accessibles.
-
-## 14.6 Réponse
-
-```text
-response_raw
-response_sha256
+endpoint
 finish_reason
-```
-
-## 14.7 Usage
-
-```text
 input_tokens
 output_tokens
-cost_usd
 latency_ms
-```
-
-## 14.8 Métriques NeoMundi
-
-```text
-g_score
-delta_g
-flag
-drop
-regime
-informational_density
-```
-
-## 14.9 Versions techniques
-
-```text
+cost
 pipeline_version
-gateway_commit_sha
-measurement_commit_sha
-analysis_commit_sha
-```
-
-## 14.10 Validation
-
-```text
+analysis_version
 validation_status
 exclusion_reason
 ```
 
-## 14.11 Jugement complémentaire
+La disponibilité réelle de chaque champ peut varier selon les fournisseurs et les campagnes.
 
-```text
-judge_status
-judge_results
-```
+Les publications publiques ne doivent pas laisser entendre qu’un champ est disponible lorsqu’il ne l’est pas.
 
 ---
 
-# 15. Validation des données
+## 13. Désidentification
 
-Chaque batch doit passer par une étape de validation avant toute agrégation.
+Les résultats publics sont publiés sous forme agrégée et désidentifiée.
 
-Le validateur doit notamment vérifier :
+Les noms des fournisseurs, modèles, endpoints, réponses brutes, traces détaillées et horodatages précis ne sont pas publiés dans les releases publiques.
 
-* présence des champs obligatoires ;
-* absence de doublons ;
-* cohérence des index de répétition ;
-* absence de valeurs manquantes critiques ;
-* absence de `NaN` silencieusement remplacés par zéro ;
-* cohérence des tokens ;
-* identification des troncatures ;
-* présence des métriques attendues ;
-* cohérence des timestamps ;
-* identification des erreurs API ;
-* conformité des hashes ;
-* version du pipeline renseignée.
-
-## 15.1 Règle d’exclusion
-
-Toute génération exclue doit conserver :
+Les profils utilisent des identifiants opaques et stables au format :
 
 ```text
-exclusion_reason
+PROFILE-XXXXXX
 ```
 
-Aucune interpolation silencieuse ne doit être effectuée.
+La correspondance privée entre ces identifiants et les systèmes observés est conservée séparément.
 
-Les erreurs restent visibles et auditables.
+La désidentification ne doit pas être présentée comme une anonymisation irréversible.
+
+Une réidentification indirecte peut rester théoriquement possible lorsqu’un tiers dispose :
+
+- d’un accès comparable aux modèles ;
+- de conditions d’exécution similaires ;
+- du protocole public ;
+- d’une capacité suffisante de comparaison comportementale.
+
+Ce risque résiduel est documenté.
 
 ---
 
-# 16. Jugement complémentaire
+## 14. Frontière entre données publiques et données privées
 
-## 16.1 Principe
+### Données publiques
 
-Le cœur du baromètre reste une mesure native multi-signaux.
+Les publications peuvent notamment contenir :
 
-Le double jugement sémantique ne doit pas être appliqué systématiquement à toutes les générations.
+- des agrégats par profil ;
+- des agrégats par question ;
+- des distributions de régimes ;
+- des niveaux de couverture ;
+- des visualisations ;
+- des métadonnées de campagne ;
+- des exclusions et limites d’interprétation.
 
-Il constitue une couche complémentaire séparée.
+### Données privées
 
-## 16.2 Architecture recommandée
+Le registre privé peut notamment contenir :
 
-### Couche 1 — Mesure native
+- les réponses individuelles ;
+- les traces d’exécution ;
+- les identités réelles des systèmes ;
+- les détails de routage ;
+- les horodatages précis ;
+- les prompts techniques complets ;
+- les données de coût ;
+- les diagnostics du pipeline ;
+- les notes de revue ;
+- les résultats intermédiaires ;
+- les artefacts nécessaires à une investigation technique.
 
-```text
-100 % des générations
-```
-
-Mesures :
-
-* stabilité ;
-* dispersion ;
-* `G` ;
-* `ΔG` ;
-* `FLAG` ;
-* `DROP` ;
-* densité ;
-* longueur ;
-* coût ;
-* latence.
-
-### Couche 2 — Panel fixe stratifié
-
-Format initial recommandé :
-
-```text
-8 générations
-par provider
-par question
-par semaine
-```
-
-Pour douze providers :
-
-```text
-12 providers
-× 3 questions
-× 8 réponses
-= 288 réponses échantillonnées
-```
-
-Avec deux juges :
-
-```text
-288 réponses
-× 2 juges
-= 576 jugements par semaine
-```
-
-### Couche 3 — Jugement déclenché sur anomalie
-
-Un double jugement supplémentaire peut être déclenché lorsque :
-
-* un batch franchit un seuil ;
-* une hausse inhabituelle de `FLAG` ou `DROP` est observée ;
-* une rupture de `ΔG` apparaît ;
-* la densité varie fortement ;
-* une anomalie de régime est détectée ;
-* une analyse sectorielle approfondie devient pertinente.
-
-## 16.3 Séparation stricte
-
-Les scores des juges ne doivent pas être fusionnés avec les métriques natives.
-
-Ils doivent rester stockés dans une couche séparée.
-
-Le double jugement permet notamment d’observer :
-
-* la validité indicative ;
-* les désaccords entre juges ;
-* les écarts de sévérité ;
-* les cas à auditer ;
-* les profils de stabilité trompeuse.
+Cette séparation permet de rendre les résultats publics inspectables sans exposer les informations nécessaires à l’exploitation ou à la réidentification directe des systèmes.
 
 ---
 
-# 17. Anonymisation et prudence éditoriale
+## 15. Livrables hebdomadaires
 
-## 17.1 Principe
+Chaque campagne peut produire plusieurs catégories de livrables.
 
-Les publications publiques doivent privilégier :
+### Livrables privés
 
-* les tendances ;
-* les profils ;
-* les écarts ;
-* les régimes ;
-* les ruptures mesurées ;
-* les limites d’interprétation.
+- fichiers d’exécution ;
+- fichiers de scoring ;
+- fichiers de validation ;
+- manifeste de campagne ;
+- journal des erreurs et exclusions ;
+- agrégats internes ;
+- analyses longitudinales ;
+- registre privé de mapping ;
+- archives versionnées.
 
-## 17.2 Risque de ré-identification
+### Livrables publics
 
-Sur une série longue, une signature comportementale peut devenir reconnaissable.
-
-L’anonymisation par identifiant du type :
-
-```text
-P-001
-P-002
-P-003
-```
-
-ne garantit pas à elle seule l’impossibilité de ré-identification.
-
-Toute publication doit donc éviter :
-
-* les imputations causales non démontrées ;
-* les accusations ;
-* les conclusions commerciales excessives ;
-* la surinterprétation d’une seule semaine ;
-* les formulations pouvant laisser croire à une certification absolue.
+- données agrégées désidentifiées ;
+- indicateurs principaux ;
+- distributions par question ou profil ;
+- couverture de la campagne ;
+- limites d’interprétation ;
+- visualisations ;
+- article ou note éditoriale ;
+- manifeste public.
 
 ---
 
-# 18. Livrables
+## 16. Limites méthodologiques
 
-Chaque campagne doit permettre de produire :
+Le Baromètre repose sur un ensemble limité de questions fixes.
 
-## 18.1 Livrables internes
+Il ne représente pas l’ensemble des usages possibles d’un système d’IA.
 
-* fichier brut horodaté ;
-* fichier validé ;
-* manifeste de campagne ;
-* rapport de qualité ;
-* tableau d’agrégation ;
-* suivi des anomalies ;
-* comparaison avec la baseline ;
-* journal des exclusions ;
-* archive versionnée.
+Les résultats sont conditionnés par :
 
-## 18.2 Livrables publics
+- les prompts sélectionnés ;
+- les paramètres d’exécution ;
+- les modèles disponibles au moment de la campagne ;
+- les politiques des fournisseurs ;
+- les mécanismes de routage ;
+- la disponibilité des API ;
+- les métriques utilisées ;
+- les méthodes de scoring ;
+- les conditions d’infrastructure.
 
-* un enseignement principal ;
-* un graphique lisible ;
-* une explication pédagogique ;
-* une limite d’interprétation ;
-* éventuellement une anomalie notable ;
-* une comparaison temporelle lorsque la baseline est suffisante.
+Les observations ne doivent donc pas être généralisées au-delà du périmètre mesuré sans validation complémentaire.
 
 ---
 
-# 19. Positionnement public
+## 17. Ce que le Baromètre n’est pas
 
-Formulation recommandée :
+Le NeoMundi Weekly Barometer n’est pas :
 
-> Les benchmarks photographient les IA à un instant donné.
-> NeoMundi observe leurs trajectoires.
->
-> Chaque semaine, notre baromètre multi-signaux suit l’évolution de leurs régimes de comportement : stabilité, dispersion, densité informationnelle, alertes, ruptures et coûts.
->
-> L’objectif n’est pas de fabriquer un classement supplémentaire.
-> C’est de rendre visibles les changements silencieux.
+- un classement de fournisseurs ;
+- un leaderboard de modèles ;
+- une certification de sécurité ;
+- une garantie de vérité ;
+- une évaluation exhaustive de la qualité ;
+- une décision réglementaire ;
+- une preuve automatique de conformité ;
+- une autorisation de déploiement ;
+- un substitut à la supervision humaine ;
+- un substitut à une évaluation métier spécifique.
+
+Il constitue un instrument public d’observation métrologique du comportement runtime des systèmes d’IA dans le temps.
 
 ---
 
-# 20. Doctrine scientifique
+## 18. Doctrine scientifique
 
-Le protocole repose sur cinq règles simples :
+Le protocole repose sur six principes :
 
 1. **Mesurer avant d’interpréter.**
-2. **Caractériser le bruit avant de déclarer une dérive.**
-3. **Conserver les métriques natives brutes.**
+2. **Répéter avant de généraliser.**
+3. **Caractériser la variation avant de déclarer une dérive.**
 4. **Ne jamais confondre stabilité et vérité.**
-5. **Observer une rupture sans lui attribuer automatiquement une cause.**
+5. **Distinguer l’observation, l’interprétation et l’attribution causale.**
+6. **Considérer chaque signal comme un élément de preuve, et non comme un verdict.**
 
 ---
 
-# 21. Protocole de lancement
+## 19. Positionnement public
 
-## Étape 1 — Vérification du pipeline
-
-```text
-6 providers
-× 3 questions
-× 3 répétitions
-= 54 générations
-```
-
-## Étape 2 — Validation manuelle
-
-Contrôler :
-
-* logs ;
-* métriques ;
-* tokens ;
-* paramètres ;
-* troncatures ;
-* erreurs API ;
-* coûts ;
-* latence ;
-* hashes ;
-* versions techniques.
-
-## Étape 3 — Première vague
-
-```text
-6 providers
-× 3 questions
-× 100 répétitions
-= 1 800 générations
-```
-
-## Étape 4 — Validation post-campagne
-
-* exécuter le validateur ;
-* inspecter les anomalies ;
-* archiver le manifeste ;
-* produire les premiers agrégats ;
-* confirmer si la campagne peut être conservée comme semaine 0.
-
-## Étape 5 — Baseline
-
-Lancer trois semaines de campagnes comparables avant toute qualification publique de dérive.
+> Les benchmarks photographient les systèmes d’IA à un instant donné.  
+> NeoMundi observe leurs trajectoires.
+>
+> Chaque semaine, le Baromètre suit plusieurs signaux de leur comportement runtime dans des conditions répétées et contrôlées.
+>
+> L’objectif n’est pas de produire un classement supplémentaire.
+>
+> Il est de rendre visibles les variations et les changements silencieux qui apparaissent dans le temps.
 
 ---
 
-# 22. Structure recommandée du repository
+## 20. Statut du protocole
 
-```text
-neomundi-weekly-barometer/
-│
-├── README.md
-├── methodologie.md
-├── .gitignore
-│
-├── config/
-│   ├── providers_v1.json
-│   ├── generation_params_v1.json
-│   └── campaign_week_000.yaml
-│
-├── prompts/
-│   ├── NM-WEEKLY-Q01_v1.txt
-│   ├── NM-WEEKLY-Q02_v1.txt
-│   └── NM-WEEKLY-Q03-S01_v1.txt
-│
-├── schemas/
-│   └── run_record.schema.json
-│
-├── scripts/
-│   ├── run_campaign.py
-│   ├── validate_runs.py
-│   ├── aggregate_weekly.py
-│   └── export_public_anonymized.py
-│
-├── reports/
-│   └── week_000/
-│
-└── data/
-    ├── raw/
-    ├── processed/
-    └── public_anonymized/
-```
+Le Baromètre Hebdomadaire NeoMundi est un protocole actif.
 
-Les données brutes, secrets et clés API ne doivent pas être poussés dans Git.
+Sa Baseline Publique V1 est constituée de 14 400 observations finalisées.
 
----
+Les campagnes hebdomadaires reposent sur 4 800 exécutions planifiées et forment progressivement une série longitudinale publique.
 
-# 23. Points à confirmer avant industrialisation
+Le protocole, les métriques et les formats de publication pourront évoluer.
 
-Les points suivants doivent être confirmés techniquement :
+Toute évolution significative devra être :
 
-* les métriques natives restent intrinsèques à chaque réponse ;
-* aucune normalisation relative à la cohorte n’est introduite dans les scripts d’analyse ;
-* les paramètres réellement acceptés sont traçables selon les APIs ;
-* les champs `finish_reason` ou `stop_reason` sont correctement enregistrés ;
-* les erreurs et exclusions restent visibles ;
-* les versions de gateway et de pipeline sont conservées ;
-* les règles statistiques de détection de rupture seront pré-enregistrées après constitution de la baseline.
+- versionnée ;
+- documentée ;
+- distinguée des campagnes antérieures ;
+- accompagnée de ses limites de comparabilité.
 
----
+Le Baromètre vise à construire une infrastructure durable permettant d’observer ce que les évaluations ponctuelles ne rendent pas visible :
 
-# 24. Statut actuel
-
-Le protocole est suffisamment défini pour lancer la phase de calibration.
-
-La première campagne ne constitue pas encore une preuve publique de dérive.
-
-Elle constitue la première étape d’un instrument longitudinal destiné à observer ce que les benchmarks ponctuels ne permettent pas de voir :
-
-> les changements silencieux des comportements IA dans le temps.
+> l’évolution du comportement des systèmes d’IA dans le temps.
