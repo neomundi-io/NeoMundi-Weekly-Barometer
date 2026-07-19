@@ -2,27 +2,31 @@
 
 **[🇬🇧 English](README.md)** · **[🇫🇷 Lire la version française](README.fr.md)**
 
-# Baromètre Hebdomadaire NeoMundi — Baseline publique V1
+# Baromètre Hebdomadaire NeoMundi — Baseline Publique V1
 
-Ce dossier contient la première publication quantitative de référence du Baromètre Hebdomadaire NeoMundi.
+Ce répertoire contient la première publication quantitative de référence du **Baromètre Hebdomadaire NeoMundi**.
 
-Il s’agit d’une **baseline désidentifiée** : une photographie de référence fixe des comportements runtime observés sur un panel de 12 systèmes d’IA générative, dans des conditions de mesure répétées et contrôlées.
+La Baseline V1 est une **campagne de référence désidentifiée** : une photographie métrologique fixe du comportement runtime de 12 profils d’IA générative, observés dans des conditions répétées et contrôlées.
 
-Ce n’est ni un rapport éditorial hebdomadaire, ni un classement, ni une certification, ni un benchmark, ni une évaluation globale de la qualité des IA.
+Il ne s’agit ni d’un rapport éditorial hebdomadaire, ni d’un classement, ni d’une certification, ni d’un palmarès de modèles, ni d’une évaluation générale de la qualité des systèmes d’IA.
 
-Son objectif est plus précis et plus durable : établir un point de référence stable à partir duquel les évolutions futures des comportements runtime observés pourront être mesurées dans le temps.
+Son objectif est plus précis et plus durable : établir une référence quantitative stable à partir de laquelle les évolutions futures du comportement observé des IA pourront être mesurées dans le temps.
 
-## La campagne de référence en bref
+---
 
-**12 profils IA désidentifiés**
-**4 questions fixes**
-**100 répétitions par question**
-**3 vagues d’exécution**
-**14 400 observations finalisées**
+## La campagne de référence en un coup d’œil
 
-La Baseline V1 constitue le référentiel initial du Baromètre Hebdomadaire NeoMundi.
+- **12 profils d’IA désidentifiés**
+- **4 questions fixes**
+- **100 répétitions par question**
+- **3 vagues d’exécution**
+- **14 400 observations finalisées**
 
-Les futurs Baromètres hebdomadaires pourront être comparés à cette référence afin d’observer si les signaux comportementaux restent stables, varient progressivement ou présentent les signes d’un possible changement de régime.
+La Baseline V1 constitue le cadre de référence initial du Baromètre Hebdomadaire NeoMundi.
+
+Les prochaines publications hebdomadaires pourront être comparées à cette baseline afin d’évaluer si les signaux comportementaux observés restent stables, évoluent progressivement ou indiquent un possible changement de régime comportemental.
+
+---
 
 ## Les quatre questions fixes
 
@@ -32,15 +36,15 @@ La campagne combine quatre conditions de réponse distinctes.
 
 **Le problème de la batte et de la balle**
 
-> Une batte et une balle coûtent au total 1,10 €.
-> La batte coûte 1 € de plus que la balle.
+> Une batte et une balle coûtent 1,10 € au total.  
+> La batte coûte 1 € de plus que la balle.  
 > Combien coûte la balle ?
 
 ### Question 2 — Explication scientifique
 
 **Les saisons sur Terre**
 
-> Pourquoi les saisons existent-elles sur Terre ?
+> Pourquoi les saisons se produisent-elles sur Terre ?
 
 ### Question 3 — Question conceptuelle ouverte
 
@@ -52,135 +56,183 @@ La campagne combine quatre conditions de réponse distinctes.
 
 **Croyances largement admises mais potentiellement fausses**
 
-> Donnez un exemple de croyance largement admise qui pourrait être fausse, et expliquez comment elle pourrait être vérifiée.
+> Donnez un exemple de croyance largement admise qui pourrait être fausse et expliquez comment elle pourrait être vérifiée.
 
-Ces questions ont été rejouées dans les mêmes conditions de campagne afin d’observer la stabilité des réponses, les signaux de risque factuel, la cohérence, la variation sémantique, le comportement décisionnel et la variation runtime.
+Les mêmes questions ont été répétées dans des conditions de campagne contrôlées afin d’observer :
 
-Les questions sont publiques afin que les lecteurs puissent comprendre la nature des tâches observées et reproduire de manière indépendante des conditions d’enquête comparables.
+- la stabilité des réponses ;
+- la variation sémantique ;
+- les signaux de risque factuel ;
+- la cohérence ;
+- les comportements décisionnels et les régimes observés ;
+- la variation runtime ;
+- la complétude des mesures.
 
-## Ce que cette baseline permet
+Les questions sont publiques afin que les lecteurs puissent comprendre la nature des tâches observées et reproduire de manière indépendante des conditions d’interrogation comparables.
 
-La baseline fixe des indicateurs récurrents pouvant être comparés dans les Baromètres suivants.
+---
 
-Les observations publiées comprennent notamment :
+## Ce que permet cette baseline
 
-* la stabilité ;
-* le signal de risque factuel ;
-* la cohérence ;
-* la variation sémantique ;
-* le comportement décisionnel, notamment `ALLOW`, `FLAG` et `ERROR` ;
-* la variation entre exécutions ;
-* la couverture et la complétude de mesure ;
-* les bandes de latence, lorsqu’elles sont publiées ;
-* `delta_g`, publié comme signal observable avancé de variation runtime.
+La Baseline V1 établit des indicateurs récurrents pouvant être comparés entre les publications hebdomadaires successives.
 
-L’objectif n’est pas de déterminer quel système serait « le meilleur ».
+Les observations publiées comprennent :
 
-L’objectif est de rendre visibles les mouvements comportementaux à travers des observations répétées.
+- la stabilité ;
+- les signaux de risque factuel ;
+- la cohérence ;
+- la variation sémantique ;
+- les comportements décisionnels, notamment `ALLOW`, `FLAG` et `ERROR` ;
+- la variation entre les exécutions ;
+- la couverture et la complétude ;
+- les plages de latence, lorsqu’elles sont disponibles ;
+- `delta_g`, publié comme un signal observable avancé de variation runtime.
 
-Un système peut rester stable tout en présentant des signaux de risque factuel. Un système peut varier sémantiquement sans être factuellement incorrect. Un signal est une observation qui demande une interprétation, et non un verdict.
+L’objectif n’est pas de déterminer quel système est « le meilleur ».
+
+L’objectif est de rendre les mouvements comportementaux mesurables et visibles au travers d’observations répétées.
+
+Un système peut rester très stable tout en présentant des signaux de risque factuel.
+
+Un système peut varier sur le plan sémantique sans produire de réponse factuellement incorrecte.
+
+Différents signaux peuvent converger, diverger ou rester non concluants.
+
+**Un signal est une observation qui nécessite une interprétation, et non un verdict.**
+
+---
 
 ## Fichiers publics
 
-* `public_profiles_summary.csv`
-  Un enregistrement quantitatif agrégé par profil désidentifié.
+### `public_profiles_summary.csv`
 
-* `public_question_profiles.csv`
-  Résultats quantitatifs agrégés par profil et par question.
+Un enregistrement quantitatif agrégé pour chaque profil désidentifié.
 
-* `public_regimes_totals.csv`
-  Répartition des décisions et régimes observés. Ce fichier ne contient pas de bandes de classement artificielles.
+### `public_question_profiles.csv`
 
-* `public_manifest.json`
-  Métadonnées de publication, provenance de campagne et inventaire des fichiers publics.
+Résultats quantitatifs agrégés par profil et par question.
 
-* `public_exclusions_and_limitations.csv`
-  Champs exclus, frontière de publication et limites d’interprétation.
+### `public_regimes_totals.csv`
 
-* `METHODOLOGY.md`
-  Note méthodologique synthétique consacrée à la campagne baseline.
+Distribution des états décisionnels et des régimes comportementaux observés. Ce fichier ne contient aucune catégorie artificielle de classement.
 
-## Frontière d’interprétation
+### `public_manifest.json`
 
-Une cellule complète signifie que l’ensemble d’exécutions prévu a été réalisé.
+Métadonnées de la publication, provenance de la campagne et inventaire des fichiers publics.
 
-La couverture au niveau de chaque métrique est publiée séparément. Elle peut être inférieure à 100 % lorsqu’une métrique individuelle n’a pas pu être calculée pour toutes les observations.
+### `public_exclusions_and_limitations.csv`
 
-Un score de `0.0` correspond à un zéro mesuré lorsque la taille d’échantillon de la métrique est positive.
+Champs exclus, limites de publication et limites d’interprétation documentées.
+
+### `METHODOLOGY.md`
+
+Documentation méthodologique synthétique de la campagne Baseline V1.
+
+---
+
+## Limites d’interprétation
+
+Une cellule expérimentale complète signifie que l’ensemble des exécutions prévues a été réalisé.
+
+La couverture propre à chaque métrique est publiée séparément et peut rester inférieure à 100 % lorsqu’une métrique spécifique n’a pas pu être calculée pour chaque observation.
+
+Une valeur de `0.0` représente une mesure égale à zéro lorsque la taille de l’échantillon propre à la métrique est supérieure à zéro.
 
 `not_scored` signifie qu’aucun score valide n’était disponible pour l’observation concernée.
 
-`delta_g` est un signal runtime dérivé observable. Sa publication ne révèle ni sa composition interne, ni ses seuils, ni sa logique de pondération, ni les règles de calcul propriétaires du cadre de mesure NeoMundi.
+`delta_g` est un signal runtime observable et dérivé. Sa publication ne divulgue ni sa composition interne, ni ses seuils, ni sa logique de pondération, ni les règles de calcul propriétaires du cadre de mesure NeoMundi.
 
-Les métriques publiées ne doivent pas être interprétées comme des confirmations indépendantes lorsqu’une dépendance entre elles est documentée dans le release.
+Les métriques publiées ne doivent pas être interprétées comme des confirmations indépendantes lorsque la documentation de la publication identifie une dépendance entre elles.
 
-## Frontière de publication publique
+Aucune métrique individuelle ne doit être interprétée isolément comme une évaluation complète de la qualité, de la véracité, de la sécurité ou de la gouvernabilité d’un système.
 
-Le Baromètre Hebdomadaire NeoMundi publie des résultats agrégés et désidentifiés afin que les chiffres annoncés, la couverture, les régimes observés et les visualisations puissent être examinés publiquement.
+---
 
-La publication publique est volontairement bornée.
+## Périmètre de la publication publique
 
-Elle ne constitue pas l’intégralité du dossier de mesure NeoMundi.
+Le Baromètre Hebdomadaire NeoMundi publie des résultats agrégés et désidentifiés afin que les chiffres annoncés, les niveaux de couverture, les distributions de régimes et les visualisations puissent être examinés publiquement.
 
-## Ce qui reste dans la frontière privée de mesure
+Cette publication est volontairement limitée.
 
-Selon la campagne et le périmètre de mesure, le dossier d’observation privé peut comprendre :
+Elle ne représente pas l’intégralité du registre de mesure NeoMundi.
 
-* des enregistrements de mesure au niveau de chaque exécution, plutôt que de simples agrégats hebdomadaires ;
-* des historiques de répétitions et des observations de continuité ;
-* des signaux de stabilité, de validité, de risque factuel, de variation sémantique et de cohérence au niveau de chaque exécution ;
-* des états de décision, des flags, des erreurs et des diagnostics de complétude ;
-* des familles de prompts, des historiques par prompt et des informations relatives au corpus de test contrôlé ;
-* des artefacts au niveau des réponses et du matériel diagnostique ;
-* la consommation de tokens, les coûts d’exécution et des indicateurs d’efficience économique ;
-* des signaux de latence, de performance runtime et d’effort d’infrastructure ;
-* des indicateurs de densité informationnelle et d’efficience de génération ;
-* des observations relatives à l’économie de tokens ou à l’arrêt anticipé de génération, lorsque cela est applicable ;
-* des identifiants de fournisseurs, de modèles, de routage, d’hébergement et de déploiement ;
-* des identifiants de requêtes, de traces et de corrélation ;
-* des horodatages d’exécution et des informations de continuité runtime ;
-* des payloads API, streaming et diagnostics bruts ;
-* des notes internes de revue, des raisons de gouvernance et des enregistrements d’interprétation contextuelle ;
-* le registre privé reliant les systèmes observés aux identifiants désidentifiés stables `PROFILE-XXXXXX`.
+---
 
-Ces éléments ne sont pas publiés, car ils pourraient révéler l’identité des systèmes, la conception des prompts, le contenu des réponses, l’architecture opérationnelle, les méthodes de mesure ou des traces runtime confidentielles.
+## Ce qui reste dans le périmètre privé de mesure
 
-## Pourquoi cette distinction compte
+Selon la campagne et le périmètre de mesure, le registre privé d’observation peut notamment comprendre :
 
-La baseline publique rend les signaux comportementaux récurrents visibles et comparables.
+- les enregistrements de mesure au niveau de chaque exécution, plutôt que les seuls agrégats publics ;
+- les historiques d’exécutions répétées et les observations de continuité longitudinale ;
+- les signaux de stabilité, de validité, de risque factuel, de variation sémantique et de cohérence au niveau de chaque exécution ;
+- les états décisionnels, signalements, erreurs et diagnostics de complétude ;
+- les familles de prompts, les historiques de prompts et les informations relatives aux corpus de test contrôlés ;
+- les artefacts de réponse et les éléments de diagnostic ;
+- la consommation de tokens, les coûts d’exécution et les indicateurs d’efficience économique ;
+- la latence, les performances runtime et les signaux d’effort infrastructurel ;
+- les indicateurs de densité informationnelle et d’efficience de génération ;
+- les observations relatives aux économies de tokens ou aux arrêts de génération, lorsqu’elles sont applicables ;
+- les identifiants de fournisseurs, de modèles, de routage, d’hébergement et de déploiement ;
+- les identifiants de requêtes, de traces et de corrélation ;
+- les horodatages d’exécution et les informations relatives à la continuité runtime ;
+- les données brutes provenant des API, des flux de streaming et des diagnostics ;
+- les notes internes d’examen, les motifs de gouvernance et les éléments d’interprétation contextuelle ;
+- le registre privé reliant les systèmes observés à leurs identifiants désidentifiés stables au format `PROFILE-XXXXXX`.
 
-La frontière privée de mesure conserve les éléments de preuve plus profonds nécessaires au rejeu contrôlé, à la revue technique, à l’analyse de coût et d’efficience, à l’évaluation de gouvernance et aux investigations dépendantes du contexte.
+Ces éléments ne sont pas publiés, car ils pourraient révéler l’identité des systèmes, la conception des prompts, le contenu des réponses, l’architecture opérationnelle, des méthodes de mesure propriétaires ou des traces runtime confidentielles.
 
-La publication publique est donc conçue pour être examinable sans exposer les systèmes, les traces opérationnelles et les artefacts dont elle est issue.
+---
+
+## Pourquoi cette distinction est importante
+
+La baseline publique rend les signaux comportementaux récurrents visibles, inspectables et comparables dans le temps.
+
+Le périmètre privé de mesure conserve les éléments de preuve plus approfondis nécessaires à :
+
+- la répétition contrôlée des exécutions ;
+- l’investigation technique ;
+- l’analyse longitudinale ;
+- l’évaluation des coûts et de l’efficience ;
+- l’examen de gouvernance ;
+- l’interprétation propre à un contexte donné.
+
+La publication publique est ainsi conçue pour permettre l’examen et la reproductibilité sans exposer les systèmes, les traces et les artefacts opérationnels à partir desquels les mesures sont produites.
+
+---
 
 ## Désidentification et risque résiduel de réidentification
 
-Cette publication est **désidentifiée**. Elle ne prétend pas être irréversiblement anonyme.
+Cette publication est **désidentifiée**. Elle n’est pas présentée comme irréversiblement anonyme.
 
-Les noms de fournisseurs, les noms de modèles, les endpoints, les prompts, les réponses brutes, les traces détaillées, les horodatages précis d’exécution et le mapping privé des profils ne sont pas publiés.
+Les noms des fournisseurs, les noms des modèles, les endpoints, les réponses brutes, les traces détaillées, les horodatages précis des exécutions et la correspondance privée des profils ne sont pas publiés.
 
-Les profils publics utilisent des identifiants opaques stables au format `PROFILE-XXXXXX`.
+Les profils publics utilisent des identifiants opaques et stables au format :
 
-Ces identifiants ne sont pas attribués en fonction d’un classement, d’une performance, d’un fournisseur ou d’un modèle.
+`PROFILE-XXXXXX`
 
-Le mapping privé est conservé séparément et n’est inclus ni dans ce dépôt ni dans aucune publication publique.
+Ces identifiants ne sont dérivés ni d’un classement, ni des performances, ni du nom d’un fournisseur ou d’un modèle.
 
-Parce que le protocole expérimental et les familles de questions sont en principe reproductibles, un tiers disposant d’un accès API comparable, de modèles disponibles et de conditions d’exécution similaires pourrait tenter d’inférer l’identité d’un ou plusieurs profils.
+Le registre privé de correspondance est conservé séparément. Il n’est inclus ni dans ce dépôt ni dans aucune publication publique.
+
+Le protocole expérimental et les familles de questions étant en principe reproductibles, un tiers disposant d’un accès comparable aux API, aux modèles et aux conditions d’exécution pourrait tenter d’inférer l’identité d’un ou plusieurs profils.
 
 NeoMundi documente donc la réidentification comme un risque résiduel et accepté de la publication.
 
-L’objectif n’est pas de revendiquer une anonymisation impossible. Il est d’empêcher l’attribution directe tout en conservant un niveau de transparence méthodologique suffisant pour permettre un examen indépendant.
+L’objectif n’est pas de revendiquer une anonymisation impossible. Il consiste à empêcher l’attribution directe tout en préservant un niveau de transparence méthodologique suffisant pour permettre un examen indépendant.
+
+---
 
 ## Ce que cette baseline n’est pas
 
 Cette baseline n’est pas :
 
-* un classement de fournisseurs ;
-* un leaderboard de modèles ;
-* une certification de sûreté ;
-* une garantie de vérité factuelle ;
-* une décision juridique, réglementaire ou de conformité ;
-* une autorisation de déploiement ;
-* un substitut à la revue humaine, à la gouvernance ou à une validation propre au domaine concerné.
+- un classement de fournisseurs ;
+- un palmarès de modèles ;
+- une certification de sécurité ;
+- une garantie d’exactitude factuelle ;
+- une décision juridique, réglementaire ou de conformité ;
+- une autorisation de déploiement ;
+- un substitut à l’examen humain ;
+- un substitut à la gouvernance ou à une validation propre à un domaine métier.
 
-C’est un point de référence public destiné à observer les comportements runtime des IA dans le temps.
+Il s’agit d’un point de référence quantitatif public permettant d’observer l’évolution du comportement runtime des IA dans le temps.
