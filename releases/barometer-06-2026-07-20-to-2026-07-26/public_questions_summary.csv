@@ -1,0 +1,5 @@
+question_id,executions_total,executions_fully_scored,coverage_rate,stability_mean,validity_signal_mean,factual_risk_mean,semantic_variation_rate,flag_rate,error_rate
+Question 1,1200,1193,0.994167,0.923077,1.0,0.0,0.0,0.0,0.0
+Question 2,1200,1193,0.994167,0.922845,0.999246,0.000754,0.0,0.000833,0.004167
+Question 3,1200,1197,0.9975,0.923051,0.999916,8.4e-05,0.005013,0.0,0.0
+Question 4,1200,1190,0.991667,0.922482,0.998067,0.001933,0.091597,0.000833,0.000833
