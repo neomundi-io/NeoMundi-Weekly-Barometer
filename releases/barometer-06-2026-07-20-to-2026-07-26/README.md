@@ -1,5 +1,7 @@
 # NeoMundi Weekly Barometer #6 — Public Data Release
 
+[Version française](README_FR.md)
+
 **Campaign:** `BAROMETER_6_2026-07-20_2026-07-26`  
 **Observation period:** 2026-07-20 to 2026-07-26  
 **Publication form:** Aggregated and de-identified
@@ -19,6 +21,25 @@
 - `public_regime_distribution.csv` — observation-level regime shares and definitions.
 - `public_metric_contract.json` — published metric definitions, limitations and excluded private fields.
 - `public_manifest.json` — file inventory, integrity information and release provenance.
+- `build_public_barometer_release.py` — public builder associated with the validation, aggregation and generation of this release.
+
+## Public release builder
+
+The public builder associated with Barometer #6 is included in this release to document the publication workflow available at the time of the campaign.
+
+The script performs structural and integrity controls, including:
+
+- validation of the expected number of observed systems;
+- validation of the expected number of questions and executions;
+- detection of duplicate observations;
+- validation of required source columns;
+- stable de-identification through an owner-maintained private profile registry;
+- generation of aggregated public artefacts;
+- generation of the public release manifest and integrity hashes.
+
+The script documents the release-building logic used for this campaign.
+
+The README and other documentation files may subsequently receive editorial clarifications without changing the source runtime observations or the published aggregate results.
 
 ## What is deliberately not released
 
@@ -46,4 +67,6 @@ Identifiers are not assigned according to performance, score, alphabetical order
 
 The public artefacts can be checked for internal consistency using the published files and integrity information contained in `public_manifest.json`.
 
-Full reproduction from source requires access to the private campaign exports under the NeoMundi Observatory governance process.
+The published builder provides additional transparency regarding the validation, aggregation and publication workflow.
+
+Full reproduction from source requires access to the private campaign exports and the private profile registry under the NeoMundi Observatory governance process.
