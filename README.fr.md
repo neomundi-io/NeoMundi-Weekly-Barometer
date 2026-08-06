@@ -1,3 +1,5 @@
+[← Retour à l’Observatoire IA NeoMundi](https://github.com/neomundi-io/neomundi-ai-observatory)
+
 # Baromètre Hebdomadaire NeoMundi
 
 🌐 **Langue :** [Français](./README.fr.md) · [English](./README.md)
