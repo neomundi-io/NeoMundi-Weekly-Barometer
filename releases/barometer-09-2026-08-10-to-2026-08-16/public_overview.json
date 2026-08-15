@@ -1,0 +1,15 @@
+{
+  "coverage_rate": 0.997292,
+  "duplicate_rows_detected": 0,
+  "executions_fully_scored": 4787,
+  "executions_launched": 4800,
+  "executions_non_error": 4800,
+  "global_metrics": {
+    "semantic_variation_rate": 0.02089,
+    "stability_mean": 0.922762
+  },
+  "incomplete_or_error_rows": 13,
+  "questions_observed": 4,
+  "schema_version": "1.3.0",
+  "systems_observed": 12
+}
