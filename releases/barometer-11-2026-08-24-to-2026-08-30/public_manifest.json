@@ -1,0 +1,95 @@
+{
+  "barometer_number": 11,
+  "builder": {
+    "name": "build_public_barometer_release",
+    "pandas_version": "2.3.3",
+    "python_version": "3.12.10",
+    "script_sha256": "2ccbf95de3e302fc2b08622819b51de2bbb48ef70cdfaea62cb391100b130456",
+    "version": "2.2.1"
+  },
+  "campaign_id": "BAROMETER_11_2026-08-24_2026-08-30",
+  "campaign_validation": {
+    "coverage_rate": 0.995208,
+    "duplicate_rows": 0,
+    "fully_scorable_rows": 4777,
+    "incomplete_or_error_rows": 23,
+    "metric_complete_rows": 4777,
+    "non_error_rows": 4791,
+    "prompt_count": 4,
+    "protocol_shape": {
+      "expected_questions": 4,
+      "expected_repetitions_per_system_question": 100,
+      "expected_rows_per_question": 1200,
+      "expected_rows_per_system": 400,
+      "expected_rows_total": 4800,
+      "expected_systems": 12,
+      "structure_validated": true
+    },
+    "row_count": 4800,
+    "source_file_count": 12,
+    "system_count": 12
+  },
+  "de-identification": {
+    "mapping_published": false,
+    "method": "Owner-maintained private profile registry using opaque PROFILE-XXXXXX identifiers. Exceptional logical identity normalisation may be resolved through a private alias registry.",
+    "private_alias_location": "not published",
+    "private_alias_registry_used": true,
+    "private_mapping_location": "not published",
+    "ranking_used": false
+  },
+  "longitudinal_comparability": {
+    "previous_campaign_id": "BAROMETER_10_2026-08-17_2026-08-23",
+    "report_file": "comparability_report.json",
+    "status": "COMPARABLE_WITH_RESERVATIONS"
+  },
+  "observation_period": {
+    "end": "2026-08-30",
+    "end_date": "2026-08-30",
+    "start": "2026-08-24",
+    "start_date": "2026-08-24"
+  },
+  "public_files": [
+    {
+      "bytes": 1017,
+      "name": "comparability_report.json",
+      "sha256": "6146e8859efa1db5b6bab0063f7326f78a5bc11c2da15025def99e2141dfefa4"
+    },
+    {
+      "bytes": 1352,
+      "name": "public_metric_contract.json",
+      "sha256": "bef9fbf7235c403e5df6ccea547074a0053afac3e0ec3cadd9176f6f71c18d38"
+    },
+    {
+      "bytes": 392,
+      "name": "public_overview.json",
+      "sha256": "86f8101ff028ceab7e1580b907daaf9d0c7795e6e587dc714336252e1ffd655a"
+    },
+    {
+      "bytes": 970,
+      "name": "public_profiles_summary.csv",
+      "sha256": "07519a5288c797a90db6c5362901bce59a1659417ee6312e1b3182902bb01ee1"
+    },
+    {
+      "bytes": 361,
+      "name": "public_questions_summary.csv",
+      "sha256": "f1f571a7516c692ee85319ff97455434915d39e3b1a3a09ad2dd956eadf56594"
+    },
+    {
+      "bytes": 664,
+      "name": "public_regime_distribution.csv",
+      "sha256": "e087e4290f40e4188a028f22d96bdaf9b39ed85e850df1a6eb465acd16f88b53"
+    },
+    {
+      "bytes": 4303,
+      "name": "README.md",
+      "sha256": "5f4406a3b4ba1a802ae9c5262dbf477c7901c08acadfdb2df5ed77266e72498c"
+    }
+  ],
+  "release_generated_at_utc": "2026-08-29T10:59:01+00:00",
+  "schema_version": "1.3.0",
+  "source_inventory_private": {
+    "file_count": 12,
+    "row_total": 4800,
+    "source_file_names_published": false
+  }
+}
