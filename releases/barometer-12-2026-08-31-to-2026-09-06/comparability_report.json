@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "aggregation_rules_unchanged": true,
+    "complete_profile_perimeter_unchanged": true,
+    "current_coverage_complete": false,
+    "current_duplicate_rows_zero": true,
+    "current_structure_validated": true,
+    "metrics_unchanged": true,
+    "questions_unchanged": true,
+    "repetitions_unchanged": true
+  },
+  "comparability_status": "COMPARABLE_WITH_RESERVATIONS",
+  "comparison_type": "CURRENT_VS_PREVIOUS_PUBLIC_RELEASE",
+  "interpretation": "This status documents protocol and publication comparability. It does not validate metric performance, establish causality, or transform a measured signal into a verdict.",
+  "perimeters": {
+    "added_profile_ids": [],
+    "common_profile_count": 12,
+    "current_profile_count": 12,
+    "previous_profile_count": 12,
+    "removed_profile_ids": []
+  },
+  "previous_campaign_id": "BAROMETER_11_2026-08-24_2026-08-30",
+  "reservations": [
+    "CURRENT_CAMPAIGN_INCOMPLETE_MEASUREMENTS"
+  ],
+  "schema_version": "1.0.0"
+}
