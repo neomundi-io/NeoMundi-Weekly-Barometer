@@ -1,5 +1,0 @@
-question_id,executions_total,executions_fully_scored,coverage_rate,stability_mean,semantic_variation_rate,flag_rate,error_rate
-Question 1,1000,999,0.999,0.923077,0.0,0.0,0.001
-Question 2,1000,1000,1.0,0.923077,0.0,0.0,0.0
-Question 3,1000,998,0.998,0.92243,0.008016,0.002,0.0
-Question 4,1000,984,0.984,0.9202,0.056911,0.008,0.0
