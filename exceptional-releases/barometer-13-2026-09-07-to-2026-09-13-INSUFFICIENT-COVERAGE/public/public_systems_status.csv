@@ -1,0 +1,13 @@
+profile_id,status,executions_planned,executions_total,executions_fully_scored,coverage_rate
+PROFILE-161CC5,measured,400,400,399,0.9975
+PROFILE-212079,measured,400,400,396,0.99
+PROFILE-486F91,measured,400,400,397,0.9925
+PROFILE-48C581,measured,400,400,400,1.0
+PROFILE-59664C,measured,400,400,398,0.995
+PROFILE-5A5C60,insufficient_data,400,0,0,
+PROFILE-5B3BB7,measured,400,400,396,0.99
+PROFILE-638E26,measured,400,400,399,0.9975
+PROFILE-739F7C,measured,400,400,400,1.0
+PROFILE-B912EA,measured,400,400,399,0.9975
+PROFILE-DEA9C5,measured,400,400,397,0.9925
+PROFILE-F5FF91,insufficient_data,400,0,0,

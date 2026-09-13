@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>AI Barometer #13 — insufficient-coverage edition</title>
+<style>
+body{font-family:-apple-system,Segoe UI,Arial,sans-serif;max-width:900px;margin:2rem auto;padding:0 1rem;color:#1a1a1a;line-height:1.5}
+.banner{background:#7a1f1f;color:#fff;padding:.75rem 1rem;border-radius:6px;font-weight:700;letter-spacing:.02em;margin-bottom:1rem}
+h1{font-size:1.5rem;margin-bottom:.25rem}
+.message{font-size:1.05rem;background:#f4f1ea;border-left:4px solid #7a1f1f;padding:.75rem 1rem;margin:1rem 0}
+table{border-collapse:collapse;width:100%;margin:1rem 0}
+th,td{border:1px solid #ccc;padding:.4rem .6rem;text-align:left;font-size:.92rem}
+th{background:#eee}
+tr.insufficient td{background:#fbe9e9;color:#7a1f1f;font-weight:600}
+.note{font-size:.85rem;color:#444;background:#f0f0f0;padding:.6rem .8rem;border-radius:4px;margin:1rem 0}
+.incident{border:1px solid #7a1f1f;border-radius:6px;padding:.75rem 1rem;margin:1rem 0}
+footer{font-size:.8rem;color:#666;margin-top:2rem;border-top:1px solid #ddd;padding-top:.75rem}
+</style></head>
+<body>
+<div class="banner">EXCEPTIONAL EDITION — INSUFFICIENT COVERAGE — NOT A STANDARD RELEASE</div>
+<h1>AI Barometer #13 — insufficient-coverage edition</h1>
+<p><strong>Observation period (UTC):</strong> 2026-09-07 &rarr; 2026-09-13</p>
+<div class="message">This week, 10 of 12 systems were fully observed. Two feeds did not provide usable coverage. NeoMundi publishes the measured state without completing, masking, or extrapolating the missing data.</div>
+<h2>Status of the 12 systems</h2>
+<table>
+<tr><th>Profile</th><th>Status</th><th>Planned</th>
+<th>Launched</th><th>Fully scored</th><th>Coverage</th></tr>
+<tr class='measured'><td>PROFILE-161CC5</td><td>measured</td><td>400</td><td>400</td><td>399</td><td>99.75%</td></tr><tr class='measured'><td>PROFILE-212079</td><td>measured</td><td>400</td><td>400</td><td>396</td><td>99.00%</td></tr><tr class='measured'><td>PROFILE-486F91</td><td>measured</td><td>400</td><td>400</td><td>397</td><td>99.25%</td></tr><tr class='measured'><td>PROFILE-48C581</td><td>measured</td><td>400</td><td>400</td><td>400</td><td>100.00%</td></tr><tr class='measured'><td>PROFILE-59664C</td><td>measured</td><td>400</td><td>400</td><td>398</td><td>99.50%</td></tr><tr class='insufficient'><td>PROFILE-5A5C60</td><td>insufficient data</td><td>400</td><td>0</td><td>0</td><td>—</td></tr><tr class='measured'><td>PROFILE-5B3BB7</td><td>measured</td><td>400</td><td>400</td><td>396</td><td>99.00%</td></tr><tr class='measured'><td>PROFILE-638E26</td><td>measured</td><td>400</td><td>400</td><td>399</td><td>99.75%</td></tr><tr class='measured'><td>PROFILE-739F7C</td><td>measured</td><td>400</td><td>400</td><td>400</td><td>100.00%</td></tr><tr class='measured'><td>PROFILE-B912EA</td><td>measured</td><td>400</td><td>400</td><td>399</td><td>99.75%</td></tr><tr class='measured'><td>PROFILE-DEA9C5</td><td>measured</td><td>400</td><td>400</td><td>397</td><td>99.25%</td></tr><tr class='insufficient'><td>PROFILE-F5FF91</td><td>insufficient data</td><td>400</td><td>0</td><td>0</td><td>—</td></tr>
+</table>
+<div class="note">Real global coverage across the 12 expected systems: 82.9% (below the standard 90% publication threshold, unmodified). No global conclusion is presented in this edition.</div>
+<h2>Figures — 10 measured systems only (no 12-system aggregation)</h2>
+<p><em>public_profiles_summary.csv, public_questions_summary.csv, public_regime_distribution.csv</em></p>
+<div class="incident"><h2>Technical incident</h2><p>/v1/govern/stream endpoint: both systems marked &quot;insufficient data&quot; returned 100% identical failures (&quot;The /stream endpoint returned no LLM response text.&quot;) across 4 separate collection attempts, including after API credential rotation. Root cause unresolved at the time of this edition. See incident_report.json for the full factual record.</p></div>
+<h2>Comparability</h2>
+<p>NOT_COMPARABLE — no numeric comparison against Barometer #12 or any prior edition.</p>
+<footer>NeoMundi AI Barometer — exceptional edition, generated automatically from measured data.</footer>
+</body></html>

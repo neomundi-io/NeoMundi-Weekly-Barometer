@@ -1,0 +1,23 @@
+{
+  "campaign_id": "BAROMETER_13_2026-09-07_2026-09-13",
+  "coverage_rate_all_12_systems": 0.829375,
+  "coverage_rate_measured_systems_only": 0.99525,
+  "edition_type": "EXCEPTIONAL_INSUFFICIENT_COVERAGE",
+  "executions_fully_scored_across_12_systems": 3981,
+  "executions_fully_scored_measured_systems_only": 3981,
+  "executions_launched_across_12_systems": 4800,
+  "executions_launched_measured_systems_only": 4000,
+  "global_conclusion_presented": false,
+  "note": "No global (12-system) aggregate metric is computed or published in this edition. Figures above 'measured systems only' are per-system/per-question descriptive counts over the 10 fully observed systems; they are not a substitute for, and are not comparable to, a standard 12-system release.",
+  "observation_period": {
+    "end": "2026-09-13",
+    "start": "2026-09-07"
+  },
+  "publication_gate": "STANDARD_RELEASE_BLOCKED_COVERAGE_BELOW_90_PERCENT",
+  "schema_version": "EXCEPTIONAL-1.0.0",
+  "standard_publication_threshold": 0.9,
+  "status": "INSUFFICIENT_COVERAGE",
+  "systems_expected": 12,
+  "systems_insufficient_data": 2,
+  "systems_measured": 10
+}

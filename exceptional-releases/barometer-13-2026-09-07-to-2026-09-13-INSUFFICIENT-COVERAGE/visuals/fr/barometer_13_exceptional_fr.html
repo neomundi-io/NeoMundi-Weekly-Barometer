@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<title>Baromètre IA #13 — édition sous couverture insuffisante</title>
+<style>
+body{font-family:-apple-system,Segoe UI,Arial,sans-serif;max-width:900px;margin:2rem auto;padding:0 1rem;color:#1a1a1a;line-height:1.5}
+.banner{background:#7a1f1f;color:#fff;padding:.75rem 1rem;border-radius:6px;font-weight:700;letter-spacing:.02em;margin-bottom:1rem}
+h1{font-size:1.5rem;margin-bottom:.25rem}
+.message{font-size:1.05rem;background:#f4f1ea;border-left:4px solid #7a1f1f;padding:.75rem 1rem;margin:1rem 0}
+table{border-collapse:collapse;width:100%;margin:1rem 0}
+th,td{border:1px solid #ccc;padding:.4rem .6rem;text-align:left;font-size:.92rem}
+th{background:#eee}
+tr.insufficient td{background:#fbe9e9;color:#7a1f1f;font-weight:600}
+.note{font-size:.85rem;color:#444;background:#f0f0f0;padding:.6rem .8rem;border-radius:4px;margin:1rem 0}
+.incident{border:1px solid #7a1f1f;border-radius:6px;padding:.75rem 1rem;margin:1rem 0}
+footer{font-size:.8rem;color:#666;margin-top:2rem;border-top:1px solid #ddd;padding-top:.75rem}
+</style></head>
+<body>
+<div class="banner">ÉDITION EXCEPTIONNELLE — COUVERTURE INSUFFISANTE — PAS UNE RELEASE STANDARD</div>
+<h1>Baromètre IA #13 — édition sous couverture insuffisante</h1>
+<p><strong>Période d'observation (UTC):</strong> 2026-09-07 &rarr; 2026-09-13</p>
+<div class="message">Cette semaine, 10 systèmes sur 12 ont pu être pleinement observés. Deux flux n'ont pas fourni une couverture exploitable. NeoMundi publie l'état mesuré sans compléter, masquer ni extrapoler les données absentes.</div>
+<h2>Statut des 12 systèmes</h2>
+<table>
+<tr><th>Profil</th><th>Statut</th><th>Prévues</th>
+<th>Lancées</th><th>Pleinement scorées</th><th>Couverture</th></tr>
+<tr class='measured'><td>PROFILE-161CC5</td><td>mesuré</td><td>400</td><td>400</td><td>399</td><td>99.75%</td></tr><tr class='measured'><td>PROFILE-212079</td><td>mesuré</td><td>400</td><td>400</td><td>396</td><td>99.00%</td></tr><tr class='measured'><td>PROFILE-486F91</td><td>mesuré</td><td>400</td><td>400</td><td>397</td><td>99.25%</td></tr><tr class='measured'><td>PROFILE-48C581</td><td>mesuré</td><td>400</td><td>400</td><td>400</td><td>100.00%</td></tr><tr class='measured'><td>PROFILE-59664C</td><td>mesuré</td><td>400</td><td>400</td><td>398</td><td>99.50%</td></tr><tr class='insufficient'><td>PROFILE-5A5C60</td><td>données insuffisantes</td><td>400</td><td>0</td><td>0</td><td>—</td></tr><tr class='measured'><td>PROFILE-5B3BB7</td><td>mesuré</td><td>400</td><td>400</td><td>396</td><td>99.00%</td></tr><tr class='measured'><td>PROFILE-638E26</td><td>mesuré</td><td>400</td><td>400</td><td>399</td><td>99.75%</td></tr><tr class='measured'><td>PROFILE-739F7C</td><td>mesuré</td><td>400</td><td>400</td><td>400</td><td>100.00%</td></tr><tr class='measured'><td>PROFILE-B912EA</td><td>mesuré</td><td>400</td><td>400</td><td>399</td><td>99.75%</td></tr><tr class='measured'><td>PROFILE-DEA9C5</td><td>mesuré</td><td>400</td><td>400</td><td>397</td><td>99.25%</td></tr><tr class='insufficient'><td>PROFILE-F5FF91</td><td>données insuffisantes</td><td>400</td><td>0</td><td>0</td><td>—</td></tr>
+</table>
+<div class="note">Couverture globale réelle sur les 12 systèmes attendus : 82,9 % (sous le seuil de publication standard de 90 %, non modifié). Aucune conclusion globale n'est présentée dans cette édition.</div>
+<h2>Chiffres — 10 systèmes mesurés uniquement (aucune agrégation à 12 systèmes)</h2>
+<p><em>public_profiles_summary.csv, public_questions_summary.csv, public_regime_distribution.csv</em></p>
+<div class="incident"><h2>Incident technique</h2><p>Endpoint /v1/govern/stream : les deux systèmes marqués « données insuffisantes » ont retourné 100 % d'échecs identiques (&quot;The /stream endpoint returned no LLM response text.&quot;) sur 4 tentatives de collecte distinctes, y compris après rotation des identifiants API. Cause racine non résolue au moment de cette édition. Voir incident_report.json pour le détail factuel complet.</p></div>
+<h2>Comparabilité</h2>
+<p>NOT_COMPARABLE — aucune comparaison chiffrée avec le Baromètre #12 ou toute édition antérieure.</p>
+<footer>Baromètre IA NeoMundi — édition exceptionnelle, générée automatiquement à partir des données mesurées.</footer>
+</body></html>

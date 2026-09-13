@@ -1,0 +1,6 @@
+regime_id,regime_label,definition,observations,share_of_all_executions
+NORMAL_SIGNAL,Normal signal,"No factual alert, semantic-variation signal or incomplete measurement detected.",3893,0.97325
+SEMANTIC_VARIATION,Semantic variation,Semantic-instability signal detected without factual alert.,63,0.01575
+FACTUAL_ALERT,Factual alert,Non-zero factual-risk signal or FLAG decision without semantic-variation signal.,24,0.006
+COMBINED_ALERT,Combined alert,Both factual-alert and semantic-variation signals detected.,1,0.00025
+INCOMPLETE_MEASUREMENT,Incomplete measurement,Execution error or missing core metric; excluded from fully-scored aggregates.,19,0.00475

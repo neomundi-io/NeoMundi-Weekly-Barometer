@@ -1,0 +1,45 @@
+{
+  "affected_profiles": [
+    "PROFILE-5A5C60",
+    "PROFILE-F5FF91"
+  ],
+  "affected_systems_internal_note": "2 of 12 official Barometer 13 systems",
+  "collection_attempts": [
+    {
+      "attempt_utc": "2026-09-11T23:39Z (approx., initial wave)",
+      "note": "Full planned run for both systems; every row errored identically.",
+      "rows_attempted": 400,
+      "rows_usable": 0
+    },
+    {
+      "attempt_utc": "2026-09-13T06:40Z",
+      "note": "Retry after coverage gate failure; identical error from row 1.",
+      "rows_attempted": "partial (interrupted)",
+      "rows_usable": 0
+    },
+    {
+      "attempt_utc": "2026-09-13T08:08Z",
+      "note": "Second retry; identical error from row 1.",
+      "rows_attempted": "partial (interrupted)",
+      "rows_usable": 0
+    },
+    {
+      "attempt_utc": "2026-09-13T10:04Z",
+      "note": "Third retry, AFTER rotating both providers' API credentials in the encrypted secrets store; identical error from row 1, ruling out an expired/invalid credential as the sole cause.",
+      "rows_attempted": "partial (interrupted)",
+      "rows_usable": 0
+    }
+  ],
+  "credential_rotation_performed": true,
+  "credential_rotation_resolved_issue": false,
+  "data_integrity_statement": "No data was fabricated, imputed, or backfilled from historical releases for the affected systems. All 800 planned observations for these two systems are absent (null) in this edition. All partial/failed attempts were archived unmodified under results/failed_runs/ with full audit manifests; none were used as a substitute for real observations.",
+  "endpoint": "https://api.neomundi.io/v1/govern/stream",
+  "error_message_verbatim": "The /stream endpoint returned no LLM response text.",
+  "error_phase": "stream",
+  "generated_at_utc": "2026-09-13T10:37:42+00:00",
+  "incident_id": "B13-STREAM-ENDPOINT-GOOGLE-OPENAI",
+  "likely_scope": "Gateway-side routing/configuration for these two provider integrations on the /v1/govern/stream route, not the underlying provider APIs themselves (unverified; requires NeoMundi-side investigation).",
+  "observed_row_level_impact": "100% of attempted requests for both affected systems returned decision=ERROR with this exact message; 0 usable observations produced.",
+  "root_cause_status": "UNRESOLVED_AT_TIME_OF_THIS_EDITION",
+  "symptom": "HTTP request succeeded but returned no usable LLM response text."
+}

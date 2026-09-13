@@ -1,0 +1,9 @@
+{
+  "comparability_status": "NOT_COMPARABLE",
+  "previous_campaign_id": "BAROMETER_12_2026-08-31_2026-09-06",
+  "reason": "Barometer 13 (this edition) measured 10/12 systems; Barometer 12 measured 12/12. No numeric delta, trend, or ranking versus Barometer 12 (or any other prior edition) is computed or published here.",
+  "reservations": [
+    "EXCEPTIONAL_EDITION_SYSTEM_COUNT_MISMATCH",
+    "CURRENT_CAMPAIGN_INCOMPLETE_MEASUREMENTS"
+  ]
+}

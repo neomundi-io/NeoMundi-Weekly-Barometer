@@ -1,0 +1,93 @@
+{
+  "barometer_number": 13,
+  "builder": {
+    "name": "build_exceptional_release_b13",
+    "pandas_version": "2.3.3",
+    "python_version": "3.12.10",
+    "reuses": "build_barometer_release.py de-identification and scoring-classification primitives (imported, not reimplemented)",
+    "script_sha256": "3b2aa93694c3fd75bb423d15c3ca3aa08ace6c1149d85a7ce2c5e180e3023381",
+    "version": "1.0.0"
+  },
+  "campaign_id": "BAROMETER_13_2026-09-07_2026-09-13",
+  "de_identification": {
+    "mapping_published": false,
+    "method": "Owner-maintained private profile registry using opaque PROFILE-XXXXXX identifiers, identical to every standard release.",
+    "private_alias_location": "not published",
+    "private_alias_registry_used": true,
+    "private_mapping_location": "not published",
+    "ranking_used": false
+  },
+  "edition_type": "EXCEPTIONAL_INSUFFICIENT_COVERAGE",
+  "longitudinal_comparability": {
+    "previous_campaign_id": "BAROMETER_12_2026-08-31_2026-09-06",
+    "report_file": "comparability_report.json",
+    "status": "NOT_COMPARABLE"
+  },
+  "observation_period": {
+    "end": "2026-09-13",
+    "end_date": "2026-09-13",
+    "start": "2026-09-07",
+    "start_date": "2026-09-07"
+  },
+  "public_files": [
+    {
+      "bytes": 453,
+      "name": "comparability_report.json",
+      "sha256": "b475115e827d8b6f1f06b3f46d4d8c2f75162f66f39479d65893b36f78524b24"
+    },
+    {
+      "bytes": 2429,
+      "name": "incident_report.json",
+      "sha256": "082c6a7a2b5afe296c0f7c8a26d5b24b512924a650307c97fd4a23c5b98f241f"
+    },
+    {
+      "bytes": 1352,
+      "name": "public_metric_contract.json",
+      "sha256": "bef9fbf7235c403e5df6ccea547074a0053afac3e0ec3cadd9176f6f71c18d38"
+    },
+    {
+      "bytes": 1148,
+      "name": "public_overview.json",
+      "sha256": "62d7e6087b0c5aaaee7338cc81cc15bb13ebeec0eb26c16e6496609bb5b710d9"
+    },
+    {
+      "bytes": 828,
+      "name": "public_profiles_summary.csv",
+      "sha256": "57eeac8ef143d2b9db04cdbcc2d9c9fed1159b8809cb7b710ad8cf48abfabcc9"
+    },
+    {
+      "bytes": 327,
+      "name": "public_questions_summary.csv",
+      "sha256": "a5beb91aeabffbb5682c6038cab70182cb7d0c85a7034e357de6b9955f1f894b"
+    },
+    {
+      "bytes": 657,
+      "name": "public_regime_distribution.csv",
+      "sha256": "8b3a5fd64b6d63d3a1a4b16c337c770fae734142c97b25e0eb9b80e4d46bc799"
+    },
+    {
+      "bytes": 595,
+      "name": "public_systems_status.csv",
+      "sha256": "ee7325d9b0f21ae495886b298b58d4d393afa609ac6f2567e91d6a3ed6771467"
+    },
+    {
+      "bytes": 3062,
+      "name": "README.md",
+      "sha256": "211e9c3f5121f41a762941f1f729de4a3d14d7bc7371cd6ea0164b2e3ddc04a9"
+    }
+  ],
+  "publication_gate": "STANDARD_RELEASE_BLOCKED_COVERAGE_BELOW_90_PERCENT",
+  "release_generated_at_utc": "2026-09-13T10:37:42+00:00",
+  "schema_version": "EXCEPTIONAL-1.0.0",
+  "source_inventory_private": {
+    "file_count_insufficient_systems": 2,
+    "file_count_measured_systems": 10,
+    "row_total_measured_systems": 4000,
+    "source_file_names_published": false
+  },
+  "standard_release_status": "BLOCKED_NOT_PUBLISHED",
+  "status": "INSUFFICIENT_COVERAGE",
+  "systems_expected": 12,
+  "systems_insufficient_data": 2,
+  "systems_measured": 10
+}
